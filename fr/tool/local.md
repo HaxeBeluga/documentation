@@ -1,4 +1,4 @@
-#La localisation
+#Localisation
 
 Beluga implémente son propre système de localisation.
 

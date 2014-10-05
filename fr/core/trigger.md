@@ -1,6 +1,4 @@
-#Trigger
-
-##Présentation
+# Trigger
 
 Les triggers se mettent en place en trois phases:
 
@@ -53,8 +51,11 @@ t.dispatch({arg1: “Test”, arg2:42});
 ```
 
 Dans le cas ou il ne dispatch aucun argument un type de trigger spécial existe “beluga.core.trigger.TriggerVoid” car haxe ne supporte pas le type Void comme type de paramètre.
-##Application dans un module
-###Déclaration
+
+## Implémentation
+
+### Déclaration
+
 Chaque module dans Beluga doit donc déclarer ses triggers:
 
 ```haxe
@@ -76,7 +77,8 @@ class MonModuleImpl {
 }
 ```
 
-###Enregistrement
+### Enregistrement
+
 *La phase d’enregistrement auprés des autres modules ne doit surtout pas se faire dans le constructeur de module. Car les autres instances de module ne sont peut-être pas encore prêtes.*
 
 Un méthode suchargeable “initialize” est prévu a cet effet, elle est appelée aprés que tous les autres modules aient était instanciés.
@@ -91,5 +93,6 @@ public function initialize(beluga : Beluga) : Void {
 
 }
 ```
-###Diffusion
+### Diffusion
+
 Voila ! Il vous est maintenant possible de dispatch un trigger n’import oú.

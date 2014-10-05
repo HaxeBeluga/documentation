@@ -66,13 +66,13 @@ beluga.getModuleInstance(Account).widgets.loginForm
 
 Dans le dossier `api`, il **doit** se trouver un fichier de classe contenant une api pour le dispatcher web de Beluga (nommé nom du module + "Api"). Puisque *c'est* un fichier de web api, les fonctions de routages __doivent__ commencer par "do" (voir la docummentation officielle [Haxe Web Disptacher](http://old.haxe.org/manual/dispatch#why-actions-are-prefixed-with-do)).
 
-#### Js
+#### JavaScript
 
-(intégrer en fonction de la documentation de jimmy)
+Voir section __JavaScript__.
 
 #### Locale
 
-(intégrer en fonction de la documentation d'Alexis)
+Voir section __Localisation__.
 
 #### View
 
@@ -83,25 +83,13 @@ Dans le dossier `view` sont contenues toutes les ressources relatives aux diffé
 
 #### Widget
 
-(intégrer en fonction de la documentation d'Alexis)
+Voir section __Widget__.
 
 ## Mecanismes
 
 ### Triggers
 
-(intégrer en fonction de la documentation d'Alexis)
-
-### Erreurs
-
-Les erreurs rencontrées internalement des modules sont toutes gérées de la même façon. Celles-ci sont remontées à l'utilisateur en utilisant le système de triggers et celui de langage. Une fois capturé, le trigger fournis un code correspondant à l'erreur rencontrée. Ce code est issue d'une énumération _couremment_ nommée: nom du module + "Error" + "Kind".
-Les modules _devraient_ aussi fournir une méthod permettant de transformer ce code en une erreur lisible par un humain. Par exemple:
-```haxe
-    private function getErrorString(error: ModuleErrorKind): String {
-        return switch (error) {
-            case ErrorTrigger1: BelugaI18n.getKey(i18n, "erreur1");
-    }
-```
-De cette façon, le développeur peut, s'il le souhaite, directement, et facilement, intégrer cette erreur dans son site. Ou bien redéfinir lui même le comportement à effectuer pour gérer l'erreur.
+Voir section __Trigger__.
 
 ## Ajouter votre propre module
 
