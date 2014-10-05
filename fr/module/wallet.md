@@ -1,5 +1,5 @@
-module de porte-feuille - documentation
-=============================
+Module - Wallet
+===============
 
 Le module de __porte-feuille__ vous permet de gérer différentes devises au sein de votre site,
 ainsi qu'un porte-feuille virtuel qui pourra être attribué a chacun de vos utilisateur.

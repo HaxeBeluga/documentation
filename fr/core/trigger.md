@@ -91,5 +91,5 @@ public function initialize(beluga : Beluga) : Void {
 
 }
 ```
-###Dispatch
+###Diffusion
 Voila ! Il vous est maintenant possible de dispatch un trigger n’import oú.

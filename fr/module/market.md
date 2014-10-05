@@ -1,5 +1,5 @@
-module de marché - documentation
-=============================
+Module - Market
+===============
 
 Le module de __marché__ vous permet de facilement vendre des articles sur votre site internet.
 

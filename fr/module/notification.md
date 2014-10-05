@@ -1,7 +1,7 @@
-Documentation du module de notification
-=======================================
+Module - Notification
+=====================
 
-Le module de __notification__ vous permet de créer et de gérer des notifications facilement. Il dépend du module __account__ fourni par Beluga donc vous ne pourrez pas vous servir du module de __notification__ sans lui.
+Le module de __notification__ vous permet de créer et de gérer des notifications facilement. Il dépend du module de __compte__ fourni par Beluga donc vous ne pourrez pas vous servir du module de __notification__ sans lui.
 
 Ce module fournit un certain nombre de méthodes pour l'intégrer facilement dans votre projet.
 

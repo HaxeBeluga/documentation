@@ -1,9 +1,9 @@
-Documentation du module survey
-==============================
+Module - Survey
+===============
 
-Le module __survey__ vous permet de créer et de gérer des sondages facilement. Il dépend du module __account__ fourni par Beluga.
+Le module de __sondage__ vous permet de créer et de gérer des sondages facilement. Il dépend du module de __compte__ fourni par Beluga.
 
-Cette module fournit un certain nombre de méthodes pour l'intégrer facilement dans votre projet.
+Ce module fournit un certain nombre de méthodes pour l'intégrer facilement dans votre projet.
 
 Voici la liste des méthodes fournies par ce module :
 

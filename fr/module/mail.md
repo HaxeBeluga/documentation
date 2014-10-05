@@ -1,7 +1,7 @@
-Documentation du module de mail
-===============================
+Module - Mail
+=============
 
-Le module de __mail__ vous permet de créer et de gérer des mails facilement. Il dépend du module __account__ fourni par Beluga.
+Le module d'__e-mail__ vous permet de créer et de gérer des mails facilement. Il dépend du module __compte__ fourni par Beluga.
 
 Ce module fournit un certain nombre de méthodes pour l'intégrer facilement dans votre projet.
 
@@ -26,7 +26,7 @@ Ce module peut renvoyer les signaux suivants :
 
 ##Erreurs
 
-En cas d'échec, vous n'avez qu'à vérifier le code d'erreur retourné pour savoir ce qui n'a pas fonctionné. Voici la liste complète des erreurs du module de __mail__ :
+En cas d'échec, vous n'avez qu'à vérifier le code d'erreur retourné pour savoir ce qui n'a pas fonctionné. Voici la liste complète des erreurs du module d'__e-mail__ :
  * __MissingLogin__ : Vous devez être connecté.
  * __MailNotSent__ : Une erreur s'est produite pendant l'envoi du mail.
  * __OnlyPHP__ : Le seul langage supporté par ce module est le PHP. N'importe quel autre langage échouera et renverra cette erreur.

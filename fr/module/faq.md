@@ -1,7 +1,7 @@
-Documentation du module FAQ
-===========================
+Module - FAQ
+============
 
-Le module __faq__ vous permet de créer et de gérer des faqs facilement. Si vous souhaitez faire de l'administration ou de l'édition sur des catégories et / ou des faqs, vous aurez besoin du module __account__ fourni par Beluga.
+Le module de __foire aux questions__ vous permet de créer et de gérer des faqs facilement. Si vous souhaitez faire de l'administration ou de l'édition sur des catégories et / ou des faqs, vous aurez besoin du module de __compte__ fourni par Beluga.
 
 Ce module vous donne accès à un certain nombre de méthodes pour facilement l'intégrer dans votre projet.
 
@@ -51,7 +51,7 @@ Ce module peut renvoyer les signaux suivants :
 
 ##Erreurs
 
-En cas d'échec dans l'exécution d'une méthode, vous n'avez qu'à vérifier le code d'erreur retourné pour savoir ce qui n'a pas fonctionné. Voici la liste des erreurs du module __faq__ :
+En cas d'échec dans l'exécution d'une méthode, vous n'avez qu'à vérifier le code d'erreur retourné pour savoir ce qui n'a pas fonctionné. Voici la liste des erreurs du module de __foire aux questions__ :
 
  * __UnknownCategory__ : La catégorie n'existe pas.
  * __MissingQuestion__ : Il manque la question.

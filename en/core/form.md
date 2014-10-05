@@ -1,11 +1,11 @@
-# Beluga's Form
+# Form
 
 Beluga's form system allows developers to automatically analyze the GET/POST
 data they receive.
 
-# Implementation
+## Implementation
 
-## Basic form
+### Basic form
 
 Imagine a simple form asking for a **name**, an **age** and an optional
 **gender**. Let's wrap it inside a Haxe object:
@@ -30,7 +30,7 @@ The following basic types are recognized :
 You can make one or several parameters optional by specifying that its type is
 `Null<T>`.
 
-## Set requirements
+### Set requirements
 
 Now we have our form, we have to define the requirements (or rules) that our
 data need to validate. In order to achieve it, our form should inherit from
@@ -85,13 +85,13 @@ value will be lost! This rule always return true.
 * URL: Match URL format.
 * Expr(expr): Custom pattern.
 
-## Validation process
+### Validation process
 
 At this point, we define our form and its requirements so, now, it's time to
 talk about its validation. Actually, this is really simple. Firstly, you have
-to create your form object passing the anonymous structure as parameter. It avoids
+to create your form object by passing the anonymous structure as a parameter. It avoids
 to manually assign the content of the structure albeit possible. Once it's done,
-you just have to call the function `validate`. If error occurred, then you can access
+you just have to call the function `validate`. If an error occurred, then you can access
 it by the public variable `error`; which is a `Map` with the data name as key and the
 requirement name as value.
 
@@ -132,6 +132,5 @@ public function doSomething(args : {name : String, age : Int, genre : Null<Strin
 
 ## Limitations
 
-We miss a system that can take the WebDispatcher data and automatically
-initialize the form object with it. So, for now, we have to do it manually, but
-it will change.
+We miss a system that can automatically bind the Beluga error system to the validate process. We still need to check
+by ourselves creating huge `if/else` statements. It MUST change.

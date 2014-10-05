@@ -1,4 +1,4 @@
-# Module (fr)
+# Module
 
 Ici, nous allons voir en détail tout ce qui couvre les modules de Beluga de façon générale. En premier, nous verons qu'est-ce qu'ils _sont_ et _comment_ ils sont organisés. Ensuite, nous nous pencherons sur la façon dont ils s'intègre à Beluga. Une fois ceci en main, nous apprendrons comment rajouter vos propres modules.
 
@@ -62,7 +62,7 @@ Ensuite, les triggers et widgets peuvent être facilement, et logiquement, accé
 beluga.getModuleInstance(Account).widgets.loginForm
 ```
 
-#### Api
+#### API
 
 Dans le dossier `api`, il **doit** se trouver un fichier de classe contenant une api pour le dispatcher web de Beluga (nommé nom du module + "Api"). Puisque *c'est* un fichier de web api, les fonctions de routages __doivent__ commencer par "do" (voir la docummentation officielle [Haxe Web Disptacher](http://old.haxe.org/manual/dispatch#why-actions-are-prefixed-with-do)).
 
@@ -95,7 +95,7 @@ Dans le dossier `view` sont contenues toutes les ressources relatives aux diffé
 
 Les erreurs rencontrées internalement des modules sont toutes gérées de la même façon. Celles-ci sont remontées à l'utilisateur en utilisant le système de triggers et celui de langage. Une fois capturé, le trigger fournis un code correspondant à l'erreur rencontrée. Ce code est issue d'une énumération _couremment_ nommée: nom du module + "Error" + "Kind".
 Les modules _devraient_ aussi fournir une méthod permettant de transformer ce code en une erreur lisible par un humain. Par exemple:
-```
+```haxe
     private function getErrorString(error: ModuleErrorKind): String {
         return switch (error) {
             case ErrorTrigger1: BelugaI18n.getKey(i18n, "erreur1");

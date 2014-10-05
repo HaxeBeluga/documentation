@@ -1,7 +1,5 @@
 # Log #
 
-----------
-
 ## A quoi ça sert ? ##
 
 Le log permet d'enregistrer des informations durant l'exécution du code à différent niveaux. C'est à dire que l'on peut enregistrer tout ce qui se passe, le déroulement du programme et ainsi mieux comprendre ce qu'il se passe. Les niveaux sont une façon de dissocier les simples messages d'information des messages d'erreurs en passant par les alertes.

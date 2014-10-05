@@ -1,7 +1,7 @@
-module de transfert de fichiers - documentation
-===============================================
+Module - Transfert de fichiers
+==============================
 
-Le module de transfert de fichier vous permet de facilement intégrer dans votre site internet un gestionnaire de téleversement et téléchargement de fichier.
+Le module de __transfert de fichier__ vous permet de facilement intégrer dans votre site internet un gestionnaire de téleversement et téléchargement de fichier.
 
 Le module de compte de beluga est nécessaire pour le bon fonctionnement de ce module, en effet une verification de l'utilisateur est réalisé avant chaque téléchargement ou televersement de fichier afin de garantir la sécurité des fichiers des utilisateurs.
 
