@@ -16,3 +16,6 @@ _book
 *.pdf
 
 .DS_Store
+
+# directories
+build
