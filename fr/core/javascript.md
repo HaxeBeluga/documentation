@@ -15,7 +15,7 @@ De cette manière, chaque fichier Javascript sera executé au chargement d'une p
 
 ### Exemple
 
-Voici comment nous pouvons utiliser JavaScript au sein de Beluga:
+Voici comment nous pouvons utiliser JavaScript au sein de Beluga :
 
 ```Haxe
     package beluga.module.account.js;
