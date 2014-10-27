@@ -4,12 +4,12 @@ Ici, nous allons voir en détails tout ce qui couvre les modules de Beluga de fa
 
 ## Concept
 
-Les modules de beluga sont la partie contenant les fonctionnalités proposées à l'utilisateur. Celles-ci étant regroupées en modules de par leur dépendances (exemple : la fonctionnalité `enregistrer utilisateur` et `connecter utilisateur` sont réunies au sein du module `account`).
+Les modules de beluga sont la partie contenant les fonctionnalités proposées à l'utilisateur. Celles-ci étant regroupées en modules de par leurs dépendances (exemple : les fonctionnalités `enregistrer utilisateur` et `connecter utilisateur` sont réunies au sein du module `account`).
 Ce découpage en modules permet aux développeurs de n'embarquer que le code contenant les fonctionnalités qu'il désire utiliser, et donc ajuster le poids de Beluga par rapport à l'utilisation qui en est faite.
 
 ## Structure
 
-Dans Beluga, nous avons choisis de rendre le plus facile possible l'ajout de nouveaux modules aux collaborateurs. Pour cette raison, nous suivons le paradigme de _convention over configuration_. Concrètement, cela signifie que certains dossiers, fichiers et fonctions sont nécessaires pour que Beluga soit en mesure de détecter et d'utiliser automatiquement les différentes fonctionalités des modules.
+Dans Beluga, nous avons choisi de rendre le plus facile possible l'ajout de nouveaux modules aux collaborateurs. Pour cette raison, nous suivons le paradigme de _convention over configuration_. Concrètement, cela signifie que certains dossiers, fichiers et fonctions sont nécessaires pour que Beluga soit en mesure de détecter et d'utiliser automatiquement les différentes fonctionalités des modules.
 De plus, nous suivons une convention de nommage très stricte permettant de facilement pouvoir naviguer d'un module à l'autre. Afin de mieux illustrer la différence entre les conventions _simples_ et celles _nécessaires_, ces dernières seront précédées d'un mot en __gras__. 
 
 Le seul défaut de cette approche est qu'elle rend plus dure, au premier abord, de trouver pourquoi un module n'est pas entièrement reconnu par Beluga. Pour cette raison, nous avons créé un script d'auto-génération d'un module (cf: Ajouter votre propre module).
