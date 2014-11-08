@@ -1,6 +1,6 @@
 # Trigger
 
-Les triggers se mettent en place en trois phases:
+Les triggers se mettent en place en trois phases :
 
 ```haxe
 import beluga.core.trigger.Trigger;
@@ -26,20 +26,20 @@ Main.hx:46: Test1motdetest
 Main.hx:49: Test2motdetest
 ```
 
-fonctionnent aussi avec des méthodes statiques:
+Ils fonctionnent aussi avec des méthodes statiques :
 
 ```haxe
 t.add(Sys.print);
 ```
 
-comme avec des méthodes d’instance:
+Ou avec des méthodes d’instance :
 
 ```haxe
 var moninstance = new MaClass();
 t.add(moninstance.mafonction);
 ```
 
-Le trigger prend en parametre template le type de données qu’il dispatch. Dans le cas ou il dispatch plusieurs arguments il suffit de faire un objet anonyme:
+Le trigger prend en paramètre template le type de données qu’il dispatch. Dans le cas où il dispatch plusieurs arguments, il suffit de faire un objet anonyme :
 
 ```haxe
 typedef MonTypeTrigger {arg1:String, arg2 : Int};
@@ -50,13 +50,13 @@ t.add(function (args : MonTypeTrigger) {
 t.dispatch({arg1: “Test”, arg2:42});
 ```
 
-Dans le cas ou il ne dispatch aucun argument un type de trigger spécial existe “beluga.core.trigger.TriggerVoid” car haxe ne supporte pas le type Void comme type de paramètre.
+Dans le cas où il ne dispatch aucun argument, un type de trigger spécial existe (“beluga.core.trigger.TriggerVoid”) car Haxe ne supporte pas le type "Void" comme type de paramètre.
 
 ## Implémentation
 
 ### Déclaration
 
-Chaque module dans Beluga doit donc déclarer ses triggers:
+Chaque module dans Beluga doit donc déclarer ses triggers :
 
 ```haxe
 class MonModuleImpl {
@@ -65,7 +65,7 @@ class MonModuleImpl {
 }
 ```
 
-Mais pour une question de clarté et de namespace nous préfererons les mettre dans une classe a part.
+Mais pour une question de clarté et de namespace, nous préférerons les mettre dans une classe a part.
 
 ```haxe
 class MonModuleTrigger {
@@ -79,9 +79,9 @@ class MonModuleImpl {
 
 ### Enregistrement
 
-*La phase d’enregistrement auprés des autres modules ne doit surtout pas se faire dans le constructeur de module. Car les autres instances de module ne sont peut-être pas encore prêtes.*
+*La phase d’enregistrement auprès des autres modules ne doit surtout pas se faire dans le constructeur de module car les autres instances de module ne sont peut-être pas encore prêtes.*
 
-Un méthode suchargeable “initialize” est prévu a cet effet, elle est appelée aprés que tous les autres modules aient était instanciés.
+Une méthode suchargeable “initialize” est prévu a cet effet. Elle est appelée après que tous les autres modules aient été instanciés.
 
 ```haxe
 class MonModuleImpl extends ModuleImpl {
@@ -95,4 +95,4 @@ public function initialize(beluga : Beluga) : Void {
 ```
 ### Diffusion
 
-Voila ! Il vous est maintenant possible de dispatch un trigger n’import oú.
+Voilà ! Il vous est maintenant possible de dispatch un trigger n’importe oú.
