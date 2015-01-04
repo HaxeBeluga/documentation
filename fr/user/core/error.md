@@ -1,4 +1,5 @@
-# Gestion d'erreurs
+Gestion d'erreurs
+=================
 
 ## Des widgets autonomes
 

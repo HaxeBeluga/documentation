@@ -1,14 +1,15 @@
-#Localisation
+Localisation
+============
 
 Beluga implémente son propre système de localisation.
 
-##Utilisation simple
+## Utilisation simple
 Tout d'abord il faut créer un dossier contenant tous les fichiers de localisation quelque part dans l'arborescence de Beluga.
 Le dossier et son contenu doivent ressembler à ca :
 ```
 local
-|-- en_US.json
-`-- fr_FR.json
+|─── en_US.json
+└─── fr_FR.json
 ```
 Chaque fichier est un fichier au format .json et ne doit contenir qu'une seule langue.
 Le contenu d'un fichier est comme ceci :
@@ -29,7 +30,7 @@ BelugaI18n.curLang = "en_US";
 Sys.println(i18n.password); //Affiche maintenant "Password"
 ```
 
-##Héritage
+## Héritage
 Il est possible de hiérarchiser plusieurs dossiers de local. Imaginons les deux fichiers suivants :
 
 *local_father/fr_FR.json*
@@ -59,7 +60,7 @@ Sys.println(father.family)//Affiche "On est de la famille des Locals"
 Sys.println(child.family)//Affiche "On est de la famille des Locals"
 ```
 
-##Application dans un Module Beluga
+## Application dans un Module Beluga
 Beluga a 3 niveaux de local :
 * les locals globales à Beluga : Beluga.i18n
 * les locals spécifiques au module : MonModule.i18n

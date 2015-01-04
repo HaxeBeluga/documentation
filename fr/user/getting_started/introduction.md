@@ -43,7 +43,8 @@ TestProject
 
 ### Configuration du projet
 Il est nécessaire d'éditer le fichier de configuration `config/database.xml` de votre projet. Celui-ci permet de configurer votre base de données :
-```
+
+```xml
 <database>
 	<host>localhost</host>
 	<!-- <port></port> -->
