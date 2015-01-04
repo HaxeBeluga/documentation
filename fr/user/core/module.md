@@ -87,6 +87,14 @@ Dans le dossier `view` sont contenues toutes les ressources relatives aux diffé
 
 Le dossier `widget` contient les fichiers de code source en charge du remplissage de la variable de context utilisée au sein des vues. Chaque fichier correspond à une vue. 
 
+### Accès base de donnée
+
+Si les connexions aux base de données sont gérées au sein de *Beluga*, il revient au développeur de créer ses propres modèles de données
+à l'aide de [__SPOD Macros__](http://old.haxe.org/manual/spod). Afin d'abstraire au maximum ces accés, et de rendre le code du
+module d'autant plus maintenable et abstrait il est courant d'utiliser le patron de classe de type __Repertoire__
+
+Voir section __Repertoires__
+
 ## Ajouter votre propre module
 
 Beluga contient un binaire (nommé run.n) permettant son intégration dans l'outil `Haxelib`. Celui-ci propose, entre autres, de générer un module contenant l'architecture minimale et fonctionnelle.
