@@ -10,12 +10,3 @@ Historique des modifications
 | 29/09/2014 | Clément Fassi | 3.0 | Toutes | Mise à jour du document en fonction de la mise à jour du projet |
 | 29/09/2014 | Clément Fassi | 3.0 | Toutes | Corrections et ajout de contenu |
 | 03/10/2014 | Clément Fassi | 3.0 | 1 | Ajout d’images et notification du tutoriel |
-
-
-
-
-
-
-
-
-
