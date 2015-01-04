@@ -1,24 +1,24 @@
 #ORM - Spod Macro
 
-Pour sa couche persistence Beluga utilise l'ORM spod macro qui est la librairie la plus standard pour utilisé les bases de données. Il est donc fortement conseillé de connaitre [spod macro](http://old.haxe.org/manual/spod) avant de lire cette documentation.
+Pour sa couche persistence, Beluga utilise l'ORM spod macro qui est la librairie la plus utilisé pour les bases de données. Il est donc fortement conseillé de connaître [spod macro](http://old.haxe.org/manual/spod) avant de lire cette documentation.
 
-La base de donnée est représenté par la classe *Database*, elle fait partie des attributs de *Beluga* et est instancié au même moment que *Beluga*. 
+La base de données est représentée par la classe *Database*. Elle fait partie des attributs de *Beluga* et est instanciée au même moment que *Beluga*. 
 
 Beluga.hx:81
 ```haxe
 db = new Database(cnx);
 ```
 
-##Enregistrer un model
-Chaque module souhaitant enregistrer des objets en persistence doit avoir sa classe model portant le build *@:build(beluga.Database.registerModel())* en plus d'hériter de Object de spod macro.
+##Enregistrer un modèle
+Chaque module souhaitant enregistrer des objets en persistence doit avoir sa classe modèle portant le build *@:build(beluga.Database.registerModel())* en plus d'hériter de la classe Object de spod macro.
 
-Exemple avec l'objet *User*
+Exemple avec l'objet *User*:
 ```haxe
 @:build(beluga.Database.registerModel())
 class User extends Object {
 ```
 
-Tout les models sont donc repertoriés dans la classe Database, Beluga est donc au courant de l'ensemble des models éxistant a l'éxécution.
+Tous les modèles sont répertoriés dans la classe Database. Par conséquent, Beluga est donc au courant de l'ensemble des modèles existant à l'exécution.
 
 Database.hx:23
 ```haxe
@@ -26,6 +26,6 @@ private static var moduleClassTypeList : Array<ClassType> = new Array<ClassType>
 ```
 
 ##Génération des tables
-Lors de l'instanciation, Beluga se connecte a la base de donnée avec les informations de beluga.xml et automatiquement va vérifier si les tables pour chacun des models éxistent, si non il les créé.
+Lors de l'instanciation, Beluga se connecte à la base de données avec les informations de beluga.xml et va automatiquement vérifier si les tables pour chacun des modèles existent. Si ce n'est pas le cas, il les crée.
 
-La fonction éxécutant cet tache est *Database.initRegisteredModelTable()* et éxécuté a l'instanciation de Database et donc de Beluga.
+La fonction exécutant cette tâche est *Database.initRegisteredModelTable()* et est exécutée à l'instanciation de Database et donc de Beluga.
