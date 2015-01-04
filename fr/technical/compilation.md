@@ -11,7 +11,7 @@ Ce sont les fonctions appelées au début de la génération du code Haxe.
 Aucune fonction de Beluga n'est appelée lors de cette phase.
 
 ## Build
-Cette phase sert a générer certains types
+Cette phase sert a générer certains types:
 
 | Methode | Description |
 | --------- | ---------------------------------------------------------------------------------- |
@@ -24,7 +24,7 @@ Cette phase sert a générer certains types
 |ValidateMacro.build()              | Génération des fonctions de validation de formulaire      |
 
 ## Macro
-Les methodes macro sont ensuite appelées
+Les méthodes macro sont ensuite appelées:
 
 | Fonctions | Description |
 |----------- | ----------------------------------------------------------------------------------- |
