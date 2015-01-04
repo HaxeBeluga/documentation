@@ -33,7 +33,7 @@ En cas d'échec, vous n'avez qu'à vérifier le code d'erreur retourné pour sav
  * __MissingReceiver__ : Le destinataire est manquant.
  * __MissingSubject__ : L'objet du mail est manquant.
  * __MissingMessage__ : Le message est manquant.
- * __UnknownId__ : L'id reçu n'existe pas dans la base de données.
+ * __UnknownId__ : L'identifiant reçu n'existe pas dans la base de données.
  * __None__ : Aucune erreur détectée.
 
 ##Description des méthodes
@@ -42,7 +42,7 @@ En cas d'échec, vous n'avez qu'à vérifier le code d'erreur retourné pour sav
 public function sendMail(args : {receiver : String, subject : String, message : String}) : Void
 ```
 
-Cette méthode prend en paramètre l'adresse mail du destinataire, l'objet du mail ainsi que le message. Elle renvoie le signal `sendSuccess` ou le signal `sendFail`. Si elle échoue, veuillez vérifier le code d'erreur retourné.
+Cette méthode prend en paramètre l'adresse mail du destinataire, l'objet du mail, ainsi que le message. Elle renvoie le signal `sendSuccess` ou le signal `sendFail`. Si elle échoue, veuillez vérifier le code d'erreur retourné.
 
 ```Haxe
 public function getSentMails() : Array<MailModel>;
@@ -54,7 +54,7 @@ Cette méthode retourne la liste des mails envoyés de l'utilisateur courant (qu
 public function getMail(id : Int) : MailModel;
 ```
 
-Cette méthode retourne le mail lié à cet id ou null si il ne peut être trouvé.
+Cette méthode retourne le mail lié à cet identifiant ou *null* s'il ne peut pas être trouvé.
 
 ```Haxe
 public function getDraftMails() : Array<MailModel>;
@@ -69,4 +69,4 @@ public function getActualMail() : MailModel
 public function canPrint() : Bool
 ```
 
-Ces quatre méthodes sont utilisées par le module de mail. Utilisée l'une d'entre elles peut créer un comportement non-défini.
+Ces quatre méthodes sont utilisées par le module de mail. Utiliser l'une d'entre elles peut créer un comportement non-défini.

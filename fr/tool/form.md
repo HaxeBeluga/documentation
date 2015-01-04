@@ -6,7 +6,7 @@ Le système de formulaire de Beluga permet aux développeurs d'analyser automati
 
 ### Formulaire basique
 
-Imaginez un simple formulaire demandant un __nom__, un __âge__ et un __genre__ optionnel. Encapsulons celui-ci au sein d'un objet Haxe:
+Imaginez un simple formulaire demandant un __nom__, un __âge__ et un __genre__ optionnel. Encapsulons celui-ci au sein d'un objet Haxe :
 
 ```Haxe
 class MyFrom
@@ -19,17 +19,17 @@ class MyFrom
 
 ###### Notes
 
-Seuls les types basiques suivant sont reconnus:
+Seuls les types basiques suivants sont reconnus :
 * Int
 * Float
 * String
 * Bool
 
-Vous pouvez faire un ou plusieurs parametres optionnel en spécifiant que son type est `Null<T>`.
+Vous pouvez faire un ou plusieurs paramètres optionnel en spécifiant que son type est `Null<T>`.
 
 ### Définir des exigences
 
-Maintenant que nous avons notre formulaire, nous devons définir les exigences (ou règles) que nos données doivent valider. Pour celam notre formulaire doit hériter de `beluga.form.Object` puis, préfixer chaque variable avec des métadonnées.
+Maintenant que nous avons notre formulaire, nous devons définir les exigences (ou règles) que nos données doivent valider. Pour cela, notre formulaire doit hériter de `beluga.form.Object` puis, préfixer chaque variable avec des métadonnées.
 
 ```Haxe
 class MyFrom extends beluga.form.Object
@@ -80,7 +80,7 @@ class MyFrom extends beluga.form.Object
 
 ### Processus de validation
 
-À partir d'ici, nous avons définie notre forulaire et ses exigences donc, maintenant, il est temps de parler de leur validation. En réalité, c'est trés simple. Premièrement, vous devez créer votre objet de formulaire en passant une strucutre anonyme comme paramètre. Cela évite d'assigner le contenu de la structure manuellement bien que possible. Une fois effectué, vous n'avez plus qu'à appeler la fonction `validate`. Si une erreur survient, alors vous pourrez y accéder au traver de la variable publique `error`; qui est un type `Map` avec le nom de la variable en tant que clé et le nom de l'exigence comme valeur.
+À partir d'ici, nous avons défini notre formulaire et ses exigences ,donc maintenant, il est temps de parler de leur validation. En réalité, c'est très simple. Premièrement, vous devez créer votre objet de formulaire en passant une structure anonyme comme paramètre. Cela évite d'assigner le contenu de la structure manuellement bien que possible. Une fois effectué, vous n'avez plus qu'à appeler la fonction `validate`. Si une erreur survient, alors vous pourrez y accéder au travers de la variable publique `error`; qui est un type `Map` avec le nom de la variable en tant que clé et le nom de l'exigence comme valeur.
 
 ```Haxe
 class MyFrom extends beluga.form.Object
@@ -119,4 +119,4 @@ public function doSomething(args : {name : String, age : Int, genre : Null<Strin
 
 ## Limitations
 
-Il nous manque un système qui peut automatiquement lié le système d'erreurs de Beluga pour valider le processus. Nous avons encore besoin de le faire nous-même en créant de gigantesque déclaration de `if/else`. Cela DOIT changer.
+Il nous manque un système qui peut automatiquement lier le système d'erreurs de Beluga pour valider le processus. Nous avons encore besoin de le faire nous-même en créant de gigantesques déclarations de `if/else`. Cela __DOIT__ changer.

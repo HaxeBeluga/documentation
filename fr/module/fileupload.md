@@ -1,9 +1,9 @@
 Module - Transfert de fichiers
 ==============================
 
-Le module de __transfert de fichier__ vous permet de facilement intégrer dans votre site internet un gestionnaire de téleversement et téléchargement de fichier.
+Le module de __transfert de fichier__ vous permet de facilement intégrer dans votre site internet un gestionnaire de téléversement et téléchargement de fichier.
 
-Le module de compte de beluga est nécessaire pour le bon fonctionnement de ce module, en effet une verification de l'utilisateur est réalisé avant chaque téléchargement ou televersement de fichier afin de garantir la sécurité des fichiers des utilisateurs.
+Le module de compte de beluga est nécessaire pour le bon fonctionnement de ce module. En effet, une vérification de l'utilisateur est réalisée avant chaque téléchargement ou téléversement de fichier afin de garantir la sécurité des fichiers des utilisateurs.
 
 
 Voici une liste des différentes fonctionnalités proposées par le module de transfert de fichiers.
@@ -36,26 +36,26 @@ public function extensionIsValid(name: String): Bool;
 
 *public function send(): Void* :
 
-La fonction send, est une fonction utilisée uniquement en interne du module d'envoie de fichier.
-Elle est appelée depuis le widget d'envoie de fichier, et va permettre de transférer un fichier utilisateur sur le serveur. Cette fonction est liée au module de compte afin d'authentifier l'utilisateur et d'assurer l'autorisation de son access a ce service.
+La fonction send, est une fonction utilisée uniquement en interne du module d'envoi de fichiers.
+Elle est appelée depuis le widget d'envoi de fichiers, et va permettre de transférer un fichier utilisateur sur le serveur. Cette fonction est liée au module de compte afin d'authentifier l'utilisateur et d'assurer l'autorisation de son accès à ce service.
 
 *public function delete(args: { id: Int }): Void* :
 
-La fonction delete, permet de supprimer un fichier utilisateur grace a l'id du fichier. Une verification est fait au préalable afin de verifier que la requete de suppression vient bien de l'utilisateur lui meme.
+La fonction delete permet de supprimer un fichier utilisateur grâce à l'identifiant du fichier. Une vérification est faite au préalable afin de verifier que la requête de suppression vient bien de l'utilisateur lui-même.
 
 *public function addextension(args: { name: String }): Void* :
 
 *public function deleteextension(args: { id: Int }): Void* :
 
-Ces deux fonctions permettent de gérer les extensions de fichier autorisée pour l'envoie de fichier sur le serveur du site.
+Ces deux fonctions permettent de gérer les extensions de fichier autorisées pour l'envoi de fichiers sur le serveur du site.
 
 *public function getUserFileList(user_id: Int): List<{name: String, id: Int}>* :
 
-Cette fonction permet d'obtenir la liste complete des fichier 
+Cette fonction permet d'obtenir la liste complète des fichiers.
 
 *public function extensionIsValid(name: String): Bool* :
 
-Enfin cette dernière fonction permet au développer de verifier la validité d'une extension, mais aussi que celle ci n'existe pas deja dans la base de données du site internet.
+Enfin, cette dernière fonction permet au développeur de vérifier la validité d'une extension, mais aussi que celle-ci n'existe pas déjà dans la base de données du site internet.
 
 
 ### A propos du fonctionnement interne du module

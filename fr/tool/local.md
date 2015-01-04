@@ -3,15 +3,15 @@
 Beluga implémente son propre système de localisation.
 
 ##Utilisation simple
-Tout d'abord il faut créer un dossier contenant tous les fichiers de localisation quelque part dans l'arboréscence de Beluga.
-Le dossier et son contenu doivent ressembler à ca:
+Tout d'abord il faut créer un dossier contenant tous les fichiers de localisation quelque part dans l'arborescence de Beluga.
+Le dossier et son contenu doivent ressembler à ca :
 ```
 local
 |-- en_US.json
 `-- fr_FR.json
 ```
-Chaque fichier est un fichier au format json et ne doit contenir qu'une seule langue.
-Le contenu d'un fichier est comme ceci:
+Chaque fichier est un fichier au format .json et ne doit contenir qu'une seule langue.
+Le contenu d'un fichier est comme ceci :
 
 ```json
 {
@@ -30,7 +30,7 @@ Sys.println(i18n.password); //Affiche maintenant "Password"
 ```
 
 ##Héritage
-Il est possible de hiérarchiser plusieurs dossiers de local. Imaginons les 2 fichiers suivant:
+Il est possible de hiérarchiser plusieurs dossiers de local. Imaginons les deux fichiers suivants :
 
 *local_father/fr_FR.json*
 ```json
@@ -47,7 +47,7 @@ Il est possible de hiérarchiser plusieurs dossiers de local. Imaginons les 2 fi
 }
 ```
 
-Nous pouvons maintenant coder ainsi:
+Nous pouvons maintenant coder ainsi :
 ```haxe
 father = BelugaI18n.loadI18nFolder("local_father");
 child = BelugaI18n.loadI18nFolder("local_child", father);
@@ -57,13 +57,12 @@ Sys.println(father.family)//Affiche "On est de la famille des Locals"
 
     Sys.println(child.hello) //Affiche "Bonjour je suis le fils !"
 Sys.println(child.family)//Affiche "On est de la famille des Locals"
-    ```
+```
 
 ##Application dans un Module Beluga
-    Beluga a 3 niveaux de local:
-    - les locals globales a Beluga: Beluga.i18n
-    - les locals spécifiques au module: MonModule.i18n
-    - les locals spécifiques au widget: MonWidget.i18n
+Beluga a 3 niveaux de local :
+* les locals globales à Beluga : Beluga.i18n
+* les locals spécifiques au module : MonModule.i18n
+* les locals spécifiques au widget : MonWidget.i18n
 
-    Bien évidemment *MonWidget.i18n* hérite de *MonModule.i18n* qui lui-même hérite de *Beluga.i18n*.
-
+Bien évidemment, *MonWidget.i18n* hérite de *MonModule.i18n* qui, lui-même, hérite de *Beluga.i18n*.

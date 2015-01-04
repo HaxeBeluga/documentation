@@ -43,13 +43,13 @@ En cas d'échec, veuillez vérifier le code d'erreur retourné pour savoir ce qu
 
 ##Description des méthodes
 
-Par exemple, la méthode `delete` peut renvoyer le signal `deleteSuccess` ou le signal `deleteFail`. Ensuite, il vous suffit d'effectuer l'action que vous souhaitez selon le résultat retourné. N'oubliez pas de vérifier le code d'erreur pour savoir ce qui n'a pas fonctionné en cas d'échec.
+Par exemple, la méthode `delete` peut renvoyer le signal `deleteSuccess` ou `deleteFail`. Ensuite, il vous suffit d'effectuer l'action que vous souhaitez selon le résultat retourné. N'oubliez pas de vérifier le code d'erreur pour savoir ce qui n'a pas fonctionné en cas d'échec.
 
 ```Haxe
 public function print(args : {id : Int}) : Void
 ```
 
-Cette méthode prend en paramètre l'id de la notification en paramètre. Elle renvoie le signal `print`. Ensuite il vous suffit d'utiliser le widget Print.
+Cette méthode prend en paramètre l'identifiant de la notification. Elle renvoie le signal `print`. Ensuite il vous suffit d'utiliser le widget Print.
 
 ```Haxe
 public function create(args : {
@@ -59,28 +59,28 @@ public function create(args : {
 	}) : Void
 ```
 
-Cette méthode crée une nouvelle notification en recevant en paramètre son titre, sa description et l'id de l'utilisateur à qui elle est destinée. Elle renvoie le signal `createSuccess` ou le signal `createFail`.
+Cette méthode crée une nouvelle notification en recevant en paramètre son titre, sa description et l'identifiant de l'utilisateur à qui elle est destinée. Elle renvoie le signal `createSuccess` ou `createFail`.
 
 ```Haxe
 public function delete(args : {id : Int}) : Void
 ```
 
-La méthode delete prend en paramètre l'id de la notification que vous souhaitez supprimer. Elle renvoie le signal `deleteSuccess` ou le signal `deleteFail`.
+La méthode `delete` prend en paramètre l'identifiant de la notification que vous souhaitez supprimer. Elle renvoie le signal `deleteSuccess` ou `deleteFail`.
 
 ```Haxe
 public function getNotifications() : Array<NotificationModel>
 ```
 
-Cette méthode retourne la liste des notification de l'utilisateur courant.
+Cette méthode retourne la liste des notifications de l'utilisateur courant.
 
 ```Haxe
 public function getNotification(notif_id: Int, user_id: Int) : NotificationModel
 ```
 
-Cette méthode retourne la notification référencée par l'id passé en paramètre si elle appartient à l'utilisateur référencé par son id passé en paramètre. Sinon, elle retourne null.
+Cette méthode retourne la notification référencée par l'identifiant passé en paramètre si elle appartient à celui-ci. Sinon, elle retourne *null*.
 
 ```Haxe
 public function canPrint(notif_id: Int) : Bool
 ```
 
-Cette méthode renvoie true si la notification référencée par l'id passé en paramètre appartient bien à l'utilisateur courant.
+Cette méthode renvoie true si la notification référencée par l'identifiant passé en paramètre appartient bien à l'utilisateur courant.

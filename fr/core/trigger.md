@@ -26,13 +26,13 @@ Main.hx:46: Test1motdetest
 Main.hx:49: Test2motdetest
 ```
 
-fonctionnent aussi avec des méthodes statiques:
+Ils fonctionnent aussi avec des méthodes statiques :
 
 ```haxe
 t.add(Sys.print);
 ```
 
-comme avec des méthodes d’instance:
+Ou avec des méthodes d’instance :
 
 ```haxe
 var moninstance = new MaClass();
@@ -50,7 +50,7 @@ t.add(function (args : MonTypeTrigger) {
 t.dispatch({arg1: “Test”, arg2:42});
 ```
 
-Dans le cas ou il ne diffuse aucun argument un type de évènements spécial existe “beluga.core.trigger.TriggerVoid” car haxe ne supporte pas le type Void comme type de paramètre.
+Dans le cas où il ne diffuse aucun argument un type de évènements spécial existe “beluga.core.trigger.TriggerVoid” car haxe ne supporte pas le type Void comme type de paramètre.
 
 ## Implémentation
 
@@ -79,9 +79,9 @@ class MonModuleImpl {
 
 ### Enregistrement
 
-*La phase d’enregistrement auprés des autres modules ne doit surtout pas se faire dans le constructeur de module. Car les autres instances de module ne sont peut-être pas encore prêtes.*
+*La phase d’enregistrement auprès des autres modules ne doit surtout pas se faire dans le constructeur de module car les autres instances de module ne sont peut-être pas encore prêtes.*
 
-Un méthode suchargeable “initialize” est prévu a cet effet, elle est appelée aprés que tous les autres modules aient était instanciés.
+Une méthode suchargeable “initialize” est prévu a cet effet. Elle est appelée après que tous les autres modules aient été instanciés.
 
 ```haxe
 class MonModuleImpl extends ModuleImpl {

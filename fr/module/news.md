@@ -60,58 +60,58 @@ Par exemple, la méthode `create` renvoie les signaux `createSuccess` et `create
 public function create(args : {title : String, text : String}) : Void
 ```
 
-La méthode create vous permet de créer une news. Elle prend en paramètre le titre de l'article et son texte. Elle peut renvoyer le signal `createSuccess` ou le signal `createFail`. Vous devez être connecté pour pouvoir utiliser cette méthode.
+La méthode `create` vous permet de créer une news. Elle prend en paramètre le titre de l'article et son texte. Elle peut renvoyer le signal `createSuccess` ou `createFail`. Vous devez être connecté pour pouvoir utiliser cette méthode.
 
 ```Haxe
 public function edit(args : {news_id : Int, title : String, text : String}) : Void
 ```
 
-La méthode edit vous permet de modifier une news. Elle prend 3 paramètres : l'id de nla news que vous souhaitez éditer, le nouveau titre et le nouveau texte. Elle renvoie le signal `editSuccess` ou le signal `editFail`. Vous devez être connecté pour pouvoir utiliser cette méthode.
+La méthode `edit` vous permet de modifier une news. Elle prend trois paramètres : l'identifiant de la news que vous souhaitez éditer, le nouveau titre et le nouveau texte. Elle renvoie le signal `editSuccess` ou `editFail`. Vous devez être connecté pour pouvoir utiliser cette méthode.
 
 ```Haxe
 public function addComment(args : {news_id : Int, text : String}) : Void
 ```
 
-La méthode addComment permet d'ajouter un commentaire sur une news. Elle prend 2 paramètres : l'id de la news sur laquelle vous souhaitez ajouter le commentaire et le texte du commentaire. Elle renvoie le signal `addCommentSuccess` ou le signal `addCommentFail`. Vous devez être connecté pour pouvoir utiliser cette méthode.
+La méthode `addComment` permet d'ajouter un commentaire sur une news. Elle prend deux paramètres : l'identifiant de la news sur laquelle vous souhaitez ajouter le commentaire et le texte du commentaire. Elle renvoie le signal `addCommentSuccess` ou `addCommentFail`. Vous devez être connecté pour pouvoir utiliser cette méthode.
 
 ```Haxe
 public function deleteComment(args : {news_id : Int, comment_id : Int}) : Void
 ```
 
-La méthode deleteComment permet de supprimer un commentaire. Elle prend 2 paramètres : l'id de la news du commentaire et l'id du commentaire. Elle renvoie le signal `deleteCommentSuccess` ou le signal `deleteCommentFail`. Pour pouvoir utiliser cette méthode, vous devez être connecté et être le créateur de la news ou le créateur du commentaire ou bien être un administrateur.
+La méthode `deleteComment` permet de supprimer un commentaire. Elle prend deux paramètres : l'identifiant de la news du commentaire et celui du commentaire. Elle renvoie le signal `deleteCommentSuccess` ou `deleteCommentFail`. Pour pouvoir utiliser cette méthode, vous devez être connecté et être le créateur de la news ou le créateur du commentaire, ou encore être un administrateur.
 
 ```Haxe
 public function delete(args : {news_id : Int}) : Void
 ```
 
-La méthode delete permet de supprimer une news. Elle prend en paramètre l'id de la news que vous souhaitez supprimer. Elle renvoie le signal `deleteFail` ou le signal `deleteSuccess`. Vous devez être connecté et être le créateur de la news ou bien être un administrateur.
+La méthode `delete` permet de supprimer une news. Elle prend en paramètre l'identifiant de la news que vous souhaitez supprimer. Elle renvoie le signal `deleteFail` ou `deleteSuccess`. Vous devez être connecté et être le créateur de la news, ou être un administrateur.
 
 ```Haxe
 public function getAllNews() : Array<NewsModel>;
 ```
 
-Cette méthode renvoie la liste de toutes les news crées (qui peut bien évidemment être vide).
+Cette méthode renvoie la liste de toutes les news crées (qui peuvent bien évidemment être vides).
 
 ```Haxe
 public function getNewsFromUser(args : {user_id : Int}) : Array<NewsModel>;
 ```
 
-Cette méthode renvoie la liste de toutes les news (qui peut bien évidemment être vide) créées par le user référencé par l'id.
+Cette méthode renvoie la liste de toutes les news (qui peuvent bien évidemment être vides) créées par l'utilisateur référencé par l'identifiant.
 
 ```Haxe
 public function getComments(args : {news_id : Int}) : Array<CommentModel>;
 ```
 
-Cette méthode retourne la liste des commentaires (qui peut bien évidemment être vide) de la news référencée par l'id.
+Cette méthode retourne la liste des commentaires (qui peuvent bien évidemment être vides) de la news référencée par l'identifiant.
 
 ```Haxe
 public function canEdit(news_id: Int, user_id: Int) : Bool
 ```
 
-La méthode canEdit renvoie true si l'utilisateur donné peut éditée la news donnée. Donc, si l'utilisateur est le créateur de la news ou un administrateur, elle renverra true.
+La méthode `canEdit` renvoie true si l'utilisateur donné peut éditer la news donnée. Donc si l'utilisateur est le créateur de la news ou un administrateur, la méthode renverra true.
 
 ```Haxe
 public function canPrint(news_id: Int) : Bool
 ```
 
-La méthode canPrint retourne true si la news existe.
+La méthode `canPrint` retourne true si la news existe.

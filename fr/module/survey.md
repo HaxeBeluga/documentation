@@ -58,13 +58,13 @@ En cas d'échec, veuillez vérifier le code d'erreur retourné pour savoir ce qu
 
 ##Description des méthodes
 
-Par-exemple, la méthode `vote` renverra le signal `voteSuccess` ou le signal `voteFail`. Ensuite, il vous suffit d'effectuer l'action que vous souhaitez selon le résultat retourné. N'oubliez pas de vérifier le code d'erreur pour savoir ce qui n'a pas fonctionné en cas d'échec.
+Par exemple, la méthode `vote` renverra le signal `voteSuccess` ou `voteFail`. Ensuite, il vous suffit d'effectuer l'action que vous souhaitez selon le résultat retourné. N'oubliez pas de vérifier le code d'erreur pour savoir ce qui n'a pas fonctionné en cas d'échec.
 
 ```Haxe
 public function canVote(survey_id : Int) : Bool
 ```
 
-La méthode canVote retourne false si il n'y a pas d'utilisateur courant connecté ou si le l'utilisateur courant a déjà voté pour le sondage référencé par l'id passé en paramètre.
+La méthode `canVote` retourne false s'il n'y a pas d'utilisateur courant connecté ou si l'utilisateur courant a déjà voté pour le sondage référencé par l'identifiant passé en paramètre.
 
 ```Haxe
 public function create(args : {
@@ -74,7 +74,7 @@ public function create(args : {
 }) : Void
 ```
 
-Cette méthode crée un nouveau sondage. Elle prend en paramètre un titre, une description et les choix. Elle renvoie le signal `createFail` ou le signal `createSuccess`.
+Cette méthode crée un nouveau sondage. Elle prend en paramètre un titre, une description et les choix. Elle renvoie le signal `createFail` ou `createSuccess`.
 
 ```Haxe
 public function vote(args : {
@@ -83,13 +83,13 @@ public function vote(args : {
 }) : Void
 ```
 
-La méthode vote prend en paramètre l'id du sondage et l'id du choix sélectionné. Elle renvoie le signal `voteSuccess` ou le signal `voteFail`.
+La méthode `vote` prend en paramètre l'identifiant du sondage et celui du choix sélectionné. Elle renvoie le signal `voteSuccess` ou `voteFail`.
 
 ```Haxe
 public function getSurvey(survey_id: Int) : SurveyModel
 ```
 
-Cette méthode renvoie le sondage correspondant à l'id passé en paramètre. Elle retourne null si le sondage n'a pas été trouvé.
+Cette méthode renvoie le sondage correspondant à l'identifiant passé en paramètre. Elle retourne *null* si le sondage n'a pas été trouvé.
 
 ```Haxe
 public function getSurveysList() : Array<SurveyData>
@@ -107,19 +107,19 @@ Cette méthode renvoie le signal `redirect`.
 public function delete(args : {survey_id : Int}) : Void
 ```
 
-La méthode delete supprime le sondage référencé par l'id passé en paramètre. Elle renvoie le signal `deleteFail` ou le signal `deleteSuccess`.
+La méthode `delete` supprime le sondage référencé par l'identifiant passé en paramètre. Elle renvoie le signal `deleteFail` ou `deleteSuccess`.
 
 ```Haxe
 public function getChoices(args : {survey_id : Int}) : Array<Choice>
 ```
 
-Cette méthode retourne la liste des choix du sondage référencé par l'id passé en paramètre. Si la liste retournée est vide, vous devriez vérifier si le sondage existe.
+Cette méthode retourne la liste des choix du sondage référencé par l'identifiant passé en paramètre. Si la liste retournée est vide, vous devriez vérifier si le sondage existe.
 
 ```Haxe
 public function getResults(args : {survey_id : Int}) : Array<Dynamic>
 ```
 
-Cette méthode retourne un tableau contenant les statistiques du sondage référencé par l'id passé en paramètre.
+Cette méthode retourne un tableau contenant les statistiques du sondage référencé par l'identifiant passé en paramètre.
 
 ```Haxe
 public function print(survey_id : Int): Void

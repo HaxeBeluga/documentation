@@ -75,7 +75,7 @@ public function subscribe(args : {
 }) : Void
 ```
 
-La méthode subscribe permet de créer un nouvel utilisateur. Elle prend en paramètre le login, le mot de passe, la confirmation du mot de passe et l'email. Elle renvoie le signal `subscribeFail` ou le signal `subscribeSubscribe`.
+La méthode *subscribe* permet de créer un nouvel utilisateur. Elle prend en paramètre le login, le mot de passe, la confirmation du mot de passe et l'email. Elle renvoie le signal `subscribeFail` ou le signal `subscribeSubscribe`.
 
 ```Haxe
 public function login(args : {
@@ -90,43 +90,43 @@ Cette méthode permet de connecter un utilisateur. Elle prend en paramètre un l
 public function deleteUser(args : {id : Int}) : Void
 ```
 
-La méthode deleteUser permet de supprimer l'utilisateur référencé par l'id passé en paramètre.
+La méthode *deleteUser* permet de supprimer l'utilisateur référencé par l'identifiant passé en paramètre.
 
 ```Haxe
 public function getUser(userId : SId) : User
 ```
 
-Cette méthode retourne l'utilisateur référencé par l'id passé en paramètre ou null si aucun n'est trouvé.
+Cette méthode retourne l'utilisateur référencé par l'identifiant passé en paramètre ou *null* si aucun n'est trouvé.
 
 ```Haxe
 public function getSponsor(userId : SId) : User
 ```
 
-Cette méthode retourne le sponsor de l'utilisateur référencé par l'id passé en paramètre.
+Cette méthode retourne le sponsor de l'utilisateur référencé par l'identifiant passé en paramètre.
 
 ```Haxe
 public function getDisconnectedUsers() : Array<User>
 ```
 
-Cette méthode retourne la liste des autres utilisateurs (donc pas le courant).
+Cette méthode retourne la liste des autres utilisateurs (donc pas celui qui est courant).
 
 ```Haxe
 public function getFriends(user_id: Int) : Array<User>
 ```
 
-Cette méthode retourne la liste des amis de l'utilisateur référencé par l'id passé en paramètre.
+Cette méthode retourne la liste des amis de l'utilisateur référencé par l'identifiant passé en paramètre.
 
 ```Haxe
 public function getNotFriends(user_id: Int) : Array<User>
 ```
 
-Cette méthode retourne la liste des utilisateurs qui ne sont pas amis avec l'utilisateur référencé par l'id passé en paramètre.
+Cette méthode retourne la liste des utilisateurs qui ne sont pas amis avec l'utilisateur référencé par l'identifiant passé en paramètre.
 
 ```Haxe
 public function getBlackListed(user_id: Int) : Array<User>
 ```
 
-Cette méthode retourne la liste des utilisateurs qui ont été blacklistés par l'utilisateur référencé par l'id passé en paramètre.
+Cette méthode retourne la liste des utilisateurs qui ont été blacklistés par l'utilisateur référencé par l'identifiant passé en paramètre.
 
 ```Haxe
 public function logout() : Void
@@ -138,13 +138,13 @@ Cette méthode permet de déconnecter l'utilisateur courant. Elle retourne le si
 public function getLoggedUser() : User
 ```
 
-Retourne l'utilisateur courant ou null s'il aucun utilisateur n'est connecté.
+Retourne l'utilisateur courant ou null si aucun utilisateur n'est connecté.
 
 ```Haxe
 public function edit(user_id: Int, email : String) : Void
 ```
 
-Cette méthode permet d'éditer le compte de l'utilisateur référencé par l'id passé en paramètre. Elle renvoie le signal `editSuccess` ou le signal `editFail`.
+Cette méthode permet d'éditer le compte de l'utilisateur référencé par l'identifiant passé en paramètre. Elle renvoie le signal `editSuccess` ou le signal `editFail`.
 
 ```Haxe
 public function ban(user_id: Int) : Void
