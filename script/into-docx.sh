@@ -2,6 +2,7 @@
 
 languageDir=$1
 userdocPath=$2
+techdocPath=$3
 
 merge_files () {
 	echo $3
@@ -32,11 +33,17 @@ userFiles=(
 	'user/module/wallet.md'
 )
 
+techFiles=(
+	'technical/misc/resume.md'
+	'technical/misc/description.md'
+	'technical/misc/revision.md'
+)
+
 if [ ${languageDir: -1} != '/' ]; then
 	languageDir=$languageDir'/'
 fi
 
-# Merge all file in one
+# Merge all user file in one and make it docs
 for i in "${userFiles[@]}"
 do
 	fullpath=$languageDir$i
@@ -47,3 +54,15 @@ do
 done
 
 pandoc --from markdown_github --to docx -o $userdocPath".docx" $userdocPath".md"
+
+# Merge all technical file in one and make it docs
+for i in "${techFiles[@]}"
+do
+	fullpath=$languageDir$i
+	if [ -f $fullpath ] && [ -r $fullpath ]; then
+		cat $fullpath >> $techdocPath".md"
+		echo -e "\n" >> $techdocPath".md"
+	fi
+done
+
+pandoc --from markdown_github --to docx -o $techdocPath".docx" $techdocPath".md"
