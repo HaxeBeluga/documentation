@@ -5,19 +5,19 @@ Ici, nous allons voir en détails tout ce qui couvre les modules de Beluga de fa
 
 ## Concept
 
-Les modules de beluga sont la partie contenant les fonctionnalités proposées à l'utilisateur. Celles-ci étant regroupées en modules de par leurs dépendances (exemple : les fonctionnalités `enregistrer utilisateur` et `connecter utilisateur` sont réunies au sein du module `account`).
-Ce découpage en modules permet aux développeurs de n'embarquer que le code contenant les fonctionnalités qu'il désire utiliser, et donc ajuster le poids de Beluga par rapport à l'utilisation qui en est faite.
+Les modules de beluga sont la partie contenant les fonctionnalités proposées à l'utilisateur. Celles-ci étant regroupées en modules de par leurs dépendences (exemple : les fonctionnalités `enregistrer utilisateur` et `connecter utilisateur` sont réunies au sein du module `account`).
+Ce découpage en modules permet aux développeurs de n'embarquer que le code contenant les fonctionnalités qu'il désire utiliser, et donc ajuster le poids de Beluga par-rapport à l'utilisation qui en est faite.
 
 ## Structure
 
-Dans Beluga, nous avons choisi de rendre le plus facile possible l'ajout de nouveaux modules aux collaborateurs. Pour cette raison, nous suivons le paradigme de _convention over configuration_. Concrètement, cela signifie que certains dossiers, fichiers et fonctions sont nécessaires pour que Beluga soit en mesure de détecter et d'utiliser automatiquement les différentes fonctionalités des modules.
+Dans Beluga, nous avons choisi de rendre le plus facile possible l'ajout de nouveaux modules aux collaborateurs. Pour cette raison, nous suivons le paradigme de _convention over configuration_. Concrètement, cela signifie que certains dossiers, fichiers et fonctions sont nécessaires pour que Beluga soit en mesure de détecter et d'utiliser automatiquement les différentes fonctionnalités des modules.
 De plus, nous suivons une convention de nommage très stricte permettant de facilement pouvoir naviguer d'un module à l'autre. Afin de mieux illustrer la différence entre les conventions _simples_ et celles _nécessaires_, ces dernières seront précédées d'un mot en __gras__. 
 
 Le seul défaut de cette approche est qu'elle rend plus dure, au premier abord, de trouver pourquoi un module n'est pas entièrement reconnu par Beluga. Pour cette raison, nous avons créé un script d'auto-génération d'un module (cf: Ajouter votre propre module).
 
 ### Architecture de fichier
 
-Les modules se trouvent sous le dossier `beluga/module`. Ils __doivent__ respecter l'architecture dossier minimale suivante afin d'être correctement reconnus et chargés par Beluga :
+Les modules se trouvent dans le dossier `beluga/module`. Ils __doivent__ respecter l'architecture dossier minimale suivante afin d'être correctement reconnus et chargés par Beluga :
 
 ``` 
 module_root/
@@ -31,7 +31,7 @@ module_root/
      └─── tpl/
 └─── widget/       : Widgets class files
 ```
-Les autres dossiers couramment utilisés, tels que `exception` et `model`, sont purement présents dans un soucis d'organisation et d'esthétique.
+Les autres dossiers couramment utilisés, tels que `exception` et `model`, sont purement présents dans un souci d'organisation et d'esthétique.
 
 ### Détails du contenu des dossiers
 
@@ -46,7 +46,7 @@ Exemple :
     class AccountImpl extends ModuleImpl {}
 ```
 Un module *devrait* aussi fournir deux classes contenantes:
-- nom du module + "Triggers": contient tous les évènements succeptible d'être soulevés.
+- nom du module + "Triggers": contient tous les évènements susceptibles d'être soulevés.
 - nom du module + "Widgets": contient tous les widgets.
 
 Ces deux classes sont ensuite exposées au développeur depuis l'interface du module. Exemple :
@@ -87,18 +87,16 @@ Dans le dossier `view` sont contenues toutes les ressources relatives aux diffé
 
 Le dossier `widget` contient les fichiers de code source en charge du remplissage de la variable de context utilisée au sein des vues. Chaque fichier correspond à une vue. 
 
-### Accès base de donnée
+### Accès base de données
 
-Si les connexions aux base de données sont gérées au sein de *Beluga*, il revient au développeur de créer ses propres modèles de données
-à l'aide de [__SPOD Macros__](http://old.haxe.org/manual/spod). Afin d'abstraire au maximum ces accés, et de rendre le code du
-module d'autant plus maintenable et abstrait il est courant d'utiliser le patron de classe de type __Repertoire__
+Si les connexions aux base de données sont gérées au sein de *Beluga*, il revient au développeur de créer ses propres modèles de données à l'aide de [__SPOD Macros__](http://old.haxe.org/manual/spod). Afin d'abstraire au maximum ces accès, et de rendre le code du module d'autant plus maintenable et abstrait il est courant d'utiliser le patron de classe de type __Repertoire__.
 
 Voir section __Repertoires__
 
 ## Ajouter votre propre module
 
 Beluga contient un binaire (nommé run.n) permettant son intégration dans l'outil `Haxelib`. Celui-ci propose, entre autres, de générer un module contenant l'architecture minimale et fonctionnelle.
-Cet outil peut-être utilisé depuis la commande suivante:
+Cet outil peut être utilisé depuis la commande suivante :
 
 `haxelib run beluga create_module "nom_du_module"`
 
