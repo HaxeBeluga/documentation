@@ -27,5 +27,5 @@ La methode ``cleanUp`` permet à Beluga de reprendre une dernière fois la main 
     
 ### Schema de flux d'exécution
 
-![Alt text](./Execution and request handling flow in Beluga.png)
+![Alt text](./Execution and request handling flow in Beluga.jpg)
 
