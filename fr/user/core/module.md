@@ -89,7 +89,7 @@ Le dossier `widget` contient les fichiers de code source en charge du remplissag
 
 ### Accès base de donnée
 
-Si les connections aux base de données sont gérées au sein de *Beluga*, il revient au developpeur de créer ces propres modèles de données
+Si les connexions aux base de données sont gérées au sein de *Beluga*, il revient au développeur de créer ses propres modèles de données
 à l'aide de [__SPOD Macros__](http://old.haxe.org/manual/spod). Afin d'abstraire au maximum ces accés, et de rendre le code du
 module d'autant plus maintenable et abstrait il est courant d'utiliser le patron de classe de type __Repertoire__
 
