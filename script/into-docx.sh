@@ -38,6 +38,12 @@ techFiles=(
 	'technical/misc/resume.md'
 	'technical/misc/description.md'
 	'technical/misc/revision.md'
+	'technical/compilation.md'
+	'technical/ConfigLoader.md'
+	'technical/auto-declaration.md'
+	'technical/dispatch-request.md'
+	'technical/orm-spod.md'
+	'technical/pattern-register.md'
 )
 
 if [ ${languageDir: -1} != '/' ]; then
