@@ -1,5 +1,5 @@
-Module - Wallet
-===============
+Module - Porte-feuille
+======================
 
 Le module de __porte-feuille__ vous permet de gérer différentes devises au sein de votre site,
 ainsi qu'un porte-feuille virtuel qui pourra être attribué a chacun de vos utilisateur.
@@ -19,9 +19,9 @@ public function display(): Void
 public function admin(): Void
 ```
 
-Ces deux fonction sont géré par le web dispatcher interne de Beluga, et son appelé lorsque l'utilisateur
+Ces deux fonction sont géré par le diffuseur d'évènement web interne de Beluga, et son appelé lorsque l'utilisateur
 requête la visualisation d'un des widgets proposé par le module de porte-feuille. Ces deux widget lancent 
-respectivement les triggers:
+respectivement les évènements:
 
 * `display`
 * `admin`
@@ -43,7 +43,7 @@ public function consumeFunds(args: {funds: Float }): Void;
 Ces fonctions sont les principales fonctionnalisées proposées par le module.
 
 La premiere fonction permet la creation d'un nouveau porte-feuille pour l'utilisateur. Si le l'utilisateur est 
-actuellement connecté (verification grace au module de compte), le porte-feuille est cree, sinon un trigger
+actuellement connecté (verification grace au module de compte), le porte-feuille est cree, sinon un évènement
 d'erreur est lancé.
 
 Les méthodes `createCurrency` et `removeCurrency`, permettent de respectivement créer ou supprimer une devise
@@ -56,10 +56,10 @@ Les fonctions `addFunds` et `consumeFunds` vont permettre d'ajouter ou supprimer
 de l'utilisateur. Une fois de plus ces fonctionnalités sont étroitement liée au module de compte, en effet
 il est fait automatiquement appel a celui ci afin de verifier l'identité de la personne actuellement connectée.
 
-### A propos des triggers
+### A propos des évènements
 
-Ces fonction lancent toutes des triggers en cas de succès ou d'échec, ces triggers son facilement reconnaissables 
-et suivent un meme patron: le nom de l'action + un suffix. Par example les triggers dans le cas de la fonction 
+Ces fonction lancent toutes des évènements en cas de succès ou d'échec, ces évènements son facilement reconnaissables 
+et suivent un meme patron: le nom de l'action + un suffix. Par example les évènements dans le cas de la fonction 
 `addFunds` seront *addFunds__Fail__* et *addFunds__Success__*
 
 ### Outils de conversions

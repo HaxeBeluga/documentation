@@ -64,19 +64,19 @@ class MyFrom extends beluga.form.Object
 
 ###### Liste des schémas prédéfinis *(En développement)*
 
-* Number: Match number.
-* Alpha: Match alphabetic characters.
-* AlphaNumeric: Match alpha-numeric character. Combinaison of Number and Alpha.
-* Email: Match e-mail address.
-* Date: Match date format.
-* Time: Match time format.
-* DateTime: Match date and time format. Cominaison of Date andTime.
-* Month: Match month format.
-* Week: Match week format.
-* Phone: Match phone format.
-* Color: Match color format.
-* URL: Match URL format.
-* Expr(expr): Custom pattern.
+* Number: nombre
+* Alpha: charactère alphabétique
+* AlphaNumeric: charactère alpha-numérique. Combinaison de `Number` et `Alpha`
+* Email: adresse e-mail
+* Date: date
+* Time: temps
+* DateTime: date et temps. Combinaison de `Date` et `Time`.
+* Month: mois
+* Week: semaine
+* Phone: téléphone
+* Color: couleur
+* URL: URL
+* Expr(expr): schéma personalisé
 
 ### Processus de validation
 

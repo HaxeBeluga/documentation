@@ -15,9 +15,9 @@ public function display(): Void;
 public function admin(): Void;
 ```
 
-Ces deux fonctions sont gérées par le web dispatcher de beluga, et permettre de signaler au développeur que l'utilisateur du site internet demande l'accès respectivement au widget d'envoie de fichier, ou au widget de gestion des envoient de fichier.
+Ces deux fonctions sont gérées par le diffuseur d'évènement web de beluga, et permettre de signaler au développeur que l'utilisateur du site internet demande l'accès respectivement au widget d'envoie de fichier, ou au widget de gestion des envoient de fichier.
 
-Ces deux fonctions lancent respectivement les triggers:
+Ces deux fonctions lancent respectivement les évènements:
 
 * `display`
 * `admin`
@@ -60,8 +60,8 @@ Enfin cette dernière fonction permet au développer de verifier la validité d'
 
 ### A propos du fonctionnement interne du module
 
-Toutes ces fonction son prises en compte automatiquement par le web dispatcher de beluga afin de rendre les widgets totalement autonome, mais peuvent aussi être appelé directement par le développeur.
+Toutes ces fonction son prises en compte automatiquement par le diffuseur d'évènement web de beluga afin de rendre les widgets totalement autonome, mais peuvent aussi être appelé directement par le développeur.
 
-Enfin chacune de ces fonctions lancent des triggers afin de notifier le développeur du succès ou échec de l'action associée.
+Enfin chacune de ces fonctions lancent des évènements afin de notifier le développeur du succès ou échec de l'action associée.
 
-Chacun de ces triggers prend la forme du nom de la fonction ainsi que d'un suffix permettant de specifier le résultat de l'action. par example dans le cas de l'appel a la fonction `delete`, si le suppression reussi alors le trigger lancé sera *delete__Success__*, au contraire si la suppression echoue, le trigger sera *delete__Fail__*.
+Chacun de ces évènements prend la forme du nom de la fonction ainsi que d'un suffix permettant de specifier le résultat de l'action. par example dans le cas de l'appel a la fonction `delete`, si le suppression reussi alors l'évènement lancé sera *delete__Success__*, au contraire si la suppression echoue, l'évènement sera *delete__Fail__*.

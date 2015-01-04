@@ -21,10 +21,10 @@ Les modules se trouvent sous le dossier `beluga/module`. Ils __doivent__ respect
 ``` 
 module_root/
 │
-│─── api/          : API used by Beluga dispatcher
-│─── js/           : Javascript files
-│─── locale/       : JSon files for localization 
-│─── view/         : All files related to the html output
+│─── api/          : interface de programmation utilisé par le diffuseur d'évènement de Beluga
+│─── js/           : fichiers Javascript
+│─── locale/       : fichiers JSON contenant les traductions
+│─── view/         : fichiers HTML relatifs à la vue
      │─── css/
      │─── locale/
      └─── tpl/
@@ -45,7 +45,7 @@ ex:
     class AccountImpl extends ModuleImpl {}
 ```
 Un module *devrait* aussi fournir deux classes contenantes:
-- nom du module + "Triggers": contient tous les triggers succeptible d'être soulevés.
+- nom du module + "Triggers": contient tous les évènements succeptible d'être soulevés.
 - nom du module + "Widgets": contient tous les widgets.
 
 Ces deux classes sont ensuite exposées au développeur depuis l'interface du module. ex:
@@ -56,15 +56,15 @@ interface Account extends Module {
 }
 [...]
 ```
-Ensuite, les triggers et widgets peuvent être facilement, et logiquement, accédés par la ligne suivante:
+Ensuite, les évènements et widgets peuvent être facilement, et logiquement, accédés par la ligne suivante:
 
 ```haxe
 beluga.getModuleInstance(Account).widgets.loginForm
 ```
 
-#### API
+#### interface de programmation
 
-Dans le dossier `api`, il **doit** se trouver un fichier de classe contenant une api pour le dispatcher web de Beluga (nommé nom du module + "Api"). Puisque *c'est* un fichier de web api, les fonctions de routages __doivent__ commencer par "do" (voir la docummentation officielle [Haxe Web Disptacher](http://old.haxe.org/manual/dispatch#why-actions-are-prefixed-with-do)).
+Dans le dossier `api`, il **doit** se trouver un fichier de classe contenant une interface de programmation pour le diffuseur d'évènement web de Beluga (nommé nom du module + "Api"). Puisque *c'est* un fichier d'interface de programmation web, les fonctions de routages __doivent__ commencer par "do" (voir la docummentation officielle [Haxe Web Disptacher](http://old.haxe.org/manual/dispatch#why-actions-are-prefixed-with-do)).
 
 #### JavaScript
 
@@ -87,9 +87,9 @@ Voir section __Widget__.
 
 ## Mecanismes
 
-### Triggers
+### Évènements
 
-Voir section __Trigger__.
+Voir section __Évènements__.
 
 ## Ajouter votre propre module
 

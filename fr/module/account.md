@@ -1,7 +1,7 @@
-Module - Account
+Module - Compte
 ================
 
-Le module de __acompte__ vous permet de gérer des comptes facilement.
+Le module de __compte__ vous permet de gérer des comptes facilement.
 
 Ce module fournit un certain nombre de méthodes pour l'intégrer facilement dans votre projet.
 

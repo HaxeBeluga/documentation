@@ -1,7 +1,7 @@
 Module - FAQ
 ============
 
-Le module de __foire aux questions__ vous permet de créer et de gérer des faqs facilement. Si vous souhaitez faire de l'administration ou de l'édition sur des catégories et / ou des faqs, vous aurez besoin du module de __compte__ fourni par Beluga.
+Le module de __foire aux questions__ (FAQ) vous permet de créer et de gérer des FAQs facilement. Si vous souhaitez faire de l'administration ou de l'édition sur des catégories et / ou des FAQs, vous aurez besoin du module de __compte__ fourni par Beluga.
 
 Ce module vous donne accès à un certain nombre de méthodes pour facilement l'intégrer dans votre projet.
 
@@ -58,9 +58,9 @@ En cas d'échec dans l'exécution d'une méthode, vous n'avez qu'à vérifier le
  * __MissingLogin__ : Vous devez être connecté.
  * __MissingAnswer__ : La réponse est manquante.
  * __MissingName__ : Le nom est manquant.
- * __EntryAlreadyExists__ : Cette faq existe déjà.
+ * __EntryAlreadyExists__ : Cette FAQ existe déjà.
  * __CategoryAlreadyExists__ : Cette catégorie existe déjà.
- * __IdNotFound__ : La faq demandée n'existe pas.
+ * __IdNotFound__ : La FAQ demandée n'existe pas.
  * __None__ : Aucune erreur détectée.
 
 ##Description des méthodes
@@ -71,7 +71,7 @@ Par-exemple, la méthode createFaq renvoie le signal `createSuccess` ou le signa
 public function redirectEditFAQ() : Bool
 ```
 
-Cette méthode est utilisée pour vérifier si la faq existe déjà. Cette méthode va changer dans une prochaine version.
+Cette méthode est utilisée pour vérifier si la FAQ existe déjà. Cette méthode va changer dans une prochaine version.
 
 ```Haxe
 public function getCurrentCategory() : CategoryModel

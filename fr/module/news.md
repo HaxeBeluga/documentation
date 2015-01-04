@@ -1,7 +1,7 @@
-Module - News
-=============
+Module - Information
+====================
 
-Le module de __nouvelles__ vous permet de créer et de gérer des news facilement. Si vous voulez poster / éditer / éditer un article ou un commentaire, vous devrez utiliser le module de __compte__ fourni par Beluga.
+Le module d'__information__ vous permet de créer et de gérer des news facilement. Si vous voulez poster / éditer / éditer un article ou un commentaire, vous devrez utiliser le module de __compte__ fourni par Beluga.
 
 Ce module fournit un certain nombre de méthode pour l'intégrer facilement dans votre projet.
 
@@ -41,7 +41,7 @@ Ce module peut renvoyer les signaux suivants :
 
 ##Erreurs
 
-En cas d'échec, veuillez vérifier le code d'erreur pour savoir ce qui n'a pas fonctionné. Voici la liste complète des erreurs du module de __nouvelles__ :
+En cas d'échec, veuillez vérifier le code d'erreur pour savoir ce qui n'a pas fonctionné. Voici la liste complète des erreurs du module d'__information__ :
 
  * __MissingLogin__ : Vous devez être connecté.
  * __NewsNotFound__ : La news demandée n'a pas été trouvée.

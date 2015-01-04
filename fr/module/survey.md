@@ -1,5 +1,5 @@
-Module - Survey
-===============
+Module - Sondage
+================
 
 Le module de __sondage__ vous permet de créer et de gérer des sondages facilement. Il dépend du module de __compte__ fourni par Beluga.
 

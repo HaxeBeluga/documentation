@@ -1,4 +1,4 @@
-Module - Market
+Module - Marché
 ===============
 
 Le module de __marché__ vous permet de facilement vendre des articles sur votre site internet.
@@ -16,7 +16,7 @@ public function admin(): Void;
 public function cart(): Void;
 ```
 
-C'est trois fonctions sont gérées par le web dispatcher de beluga. Elles lancent respectivement les triggers:
+C'est trois fonctions sont gérées par le diffuseur d'évènement web de beluga. Elles lancent respectivement les évènements:
 
 * `display`
 * `admin`
@@ -41,20 +41,20 @@ Ces trois fonctions peuvent être aussi bien utilisé par l'utilisateur que par 
 
 *public function addProductToCart(args: { id: Int }): Void* :
 
-Cette fonction permet d'ajouter un produit au panier de l'utilisateur, a l'aide de l'identifiant en base de donnée du produit. Si le produit existe, alors le produit est ajouté, néanmoins si l'utilisateur n'est pas identifié ou si le produit n'existe pas, un trigger d'erreur et lancé.
+Cette fonction permet d'ajouter un produit au panier de l'utilisateur, a l'aide de l'identifiant en base de donnée du produit. Si le produit existe, alors le produit est ajouté, néanmoins si l'utilisateur n'est pas identifié ou si le produit n'existe pas, un évènement d'erreur et lancé.
 
 *public function removeProductInCart(args: { id: Int }): Void* :
 
-Cette fonction permet de supprimer un produit au panier de l'utilisateur, a l'aide de l'identifiant en base de donnée du produit. Si le produit existe est present dans le panier alors celui ci est supprimé, néanmoins si l'utilisateur n'est pas identifié ou si le produit n'existe pas, un trigger d'erreur et lancé.
+Cette fonction permet de supprimer un produit au panier de l'utilisateur, a l'aide de l'identifiant en base de donnée du produit. Si le produit existe est present dans le panier alors celui ci est supprimé, néanmoins si l'utilisateur n'est pas identifié ou si le produit n'existe pas, un évènement d'erreur et lancé.
 
 *public function checkoutCart(): Void* :
 
-Cette fonction permet de valider l'achat des produits contenus dans le panier de l'utilisateur. Lors de l'appel, il est vérifié si l'utilisateur est bien identifié, puis si les fond disponibles dans le porte-feuille de l'utilisateur sont suffisant. Dans ce cas le panier est acheté et un trigger de succès et lancé contenant la liste des produits achetés par l'utilisateur, et la somme totale du panier. Dans le cas contraire un trigger d'erreur est lancé.
+Cette fonction permet de valider l'achat des produits contenus dans le panier de l'utilisateur. Lors de l'appel, il est vérifié si l'utilisateur est bien identifié, puis si les fond disponibles dans le porte-feuille de l'utilisateur sont suffisant. Dans ce cas le panier est acheté et un évènement de succès et lancé contenant la liste des produits achetés par l'utilisateur, et la somme totale du panier. Dans le cas contraire un évènement d'erreur est lancé.
 
-### A propos des triggers
+### A propos des évènements
 
-Ces fonction lancent toutes des triggers en cas de succès ou d'échec, ces triggers son facilement reconnaissables 
-et suivent un meme patron: le nom de l'action + un suffix. Par example les triggers dans le cas de la fonction 
+Ces fonction lancent toutes des évènements en cas de succès ou d'échec, ces évènements son facilement reconnaissables 
+et suivent un meme patron: le nom de l'action + un suffix. Par example les évènements dans le cas de la fonction 
 `addFunds` seront *checkoutCart__Fail__* et *checkoutCart__Success__*
 
 ### Fonctions utilitaires
@@ -65,5 +65,5 @@ public function getProductFromId(id: Int): Option<Product>;
 ``
 
 Ces fonctions permettent d'obtenir des informations a propos du panier courant d'un utilisateur, ou encore a propos d'un produit.
-Dans le cas de `getProductList`, il est vérifié tout d'abord qu'un utilisateur est bien connecté sur le site, puis que celui ci posséde bien un panier. Dans ce cas la liste des produits au sein du panier est retournée. Dans le cas contraire un trigger d'erreur est lancé.
+Dans le cas de `getProductList`, il est vérifié tout d'abord qu'un utilisateur est bien connecté sur le site, puis que celui ci posséde bien un panier. Dans ce cas la liste des produits au sein du panier est retournée. Dans le cas contraire un évènement d'erreur est lancé.
 En ce qui concerne `getProductFromId`, cette fonction permet d'obtenir un produit par son identifiant.

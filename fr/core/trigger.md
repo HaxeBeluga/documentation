@@ -1,6 +1,6 @@
-# Trigger
+# Évènements
 
-Les triggers se mettent en place en trois phases:
+Les évènements se mettent en place en trois phases:
 
 ```haxe
 import beluga.core.trigger.Trigger;
@@ -39,7 +39,7 @@ var moninstance = new MaClass();
 t.add(moninstance.mafonction);
 ```
 
-Le trigger prend en parametre template le type de données qu’il dispatch. Dans le cas ou il dispatch plusieurs arguments il suffit de faire un objet anonyme:
+l'évènements prend en parametre template le type de données qu’il diffuse. Dans le cas où il diffuse plusieurs arguments il suffit de faire un objet anonyme:
 
 ```haxe
 typedef MonTypeTrigger {arg1:String, arg2 : Int};
@@ -50,13 +50,13 @@ t.add(function (args : MonTypeTrigger) {
 t.dispatch({arg1: “Test”, arg2:42});
 ```
 
-Dans le cas ou il ne dispatch aucun argument un type de trigger spécial existe “beluga.core.trigger.TriggerVoid” car haxe ne supporte pas le type Void comme type de paramètre.
+Dans le cas ou il ne diffuse aucun argument un type de évènements spécial existe “beluga.core.trigger.TriggerVoid” car haxe ne supporte pas le type Void comme type de paramètre.
 
 ## Implémentation
 
 ### Déclaration
 
-Chaque module dans Beluga doit donc déclarer ses triggers:
+Chaque module dans Beluga doit donc déclarer ses évènementss:
 
 ```haxe
 class MonModuleImpl {
@@ -65,7 +65,7 @@ class MonModuleImpl {
 }
 ```
 
-Mais pour une question de clarté et de namespace nous préfererons les mettre dans une classe a part.
+Mais pour une question de clarté et d'espace de nom nous préfererons les mettre dans une classe a part.
 
 ```haxe
 class MonModuleTrigger {
@@ -95,4 +95,4 @@ public function initialize(beluga : Beluga) : Void {
 ```
 ### Diffusion
 
-Voila ! Il vous est maintenant possible de dispatch un trigger n’import oú.
+Voila ! Il vous est maintenant possible de diffuser un évènements n’import oú.
