@@ -1,4 +1,5 @@
-# Javascript
+Javascript
+==========
 
 Le **Javascript** permet d'éxécuter du code sur le client. C'est à dire rendre dynamique les pages web. Dans les modules de Beluga, le Javascript est utilisé afin de pouvoir mettre à jour l'état des *widgets* (Fragments de page web) sans avoir à rafraîchir la page web.
 

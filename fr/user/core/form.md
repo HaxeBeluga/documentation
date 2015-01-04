@@ -1,4 +1,5 @@
-# Formulaire
+Formulaire
+==========
 
 Le système de formulaire de Beluga permet aux développeurs d'analyser automatiquement les données reçues au travers des méthodes GET et POST.
 

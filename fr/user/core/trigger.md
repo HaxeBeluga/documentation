@@ -1,4 +1,5 @@
-# Évènements
+Évènements
+==========
 
 Les évènements se mettent en place en trois phases:
 
@@ -95,4 +96,4 @@ public function initialize(beluga : Beluga) : Void {
 ```
 ### Diffusion
 
-Voila ! Il vous est maintenant possible de diffuser un évènements n’import oú.
+Voila ! Il vous est maintenant possible de diffuser un évènements n’import où.
