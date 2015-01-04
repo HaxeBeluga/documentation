@@ -1,6 +1,4 @@
-ConfigLoader
-=============
--------------
+#ConfigLoader
 
 La configuration dans Beluga est une composante essentielle au bon fonctionnement du Framework.
 
@@ -12,8 +10,7 @@ Ainsi, elle permet de configurer les éléments suivants
 * L'url de base du site (souvent `/`)
 * Des configurations personnalisés
 
-Fonctionnement général du ConfigLoader
---------------------------------------
+##Fonctionnement général du ConfigLoader
 
 Le ConfigLoader commence tout d'abord par charger le fichier `beluga.xml` qui doit se trouver à la racine du projet compilé.
 
@@ -23,8 +20,7 @@ Enfin, la configuration est chargée dans une variable `config` accessible via `
 
 Il est important de noter que tout ce processus est effectué **durant** la compilation du projet. La configuration ne sera donc pas éditable post-compilation.
 
-Fichiers de configuration
--
+###Fichiers de configuration
 
 Le fichier de base doit s'appler `beluga.xml`, celui que nous fournissons à titre d'exemple se contente de charger les autres fichiers de configuration afin de mieux organiser son projet
 
@@ -36,8 +32,7 @@ Le fichier de base doit s'appler `beluga.xml`, celui que nous fournissons à tit
 
 Les fichiers de configuration doivent respecter le format XML. Il n'est cependant pas nécessaire d'y mettre un header.
 
-Balises
--
+###Balises
 
 Liste des balises supportés
 
@@ -56,8 +51,7 @@ Il est possible d'assigner n'importe quelle variable à l'objet configuration en
 
 Dans l'exemple ci-dessus, la valeur `Toto` sera accessible dans le code via `ConfigLoader.config.url.base`
 
-Configuration minimale
--
+###Configuration minimale
 
 Il y a à un certain nombre de variables qui **doivent** êre remplies afin d'obtenir un projet fonctionnel, ainsi, la configuration minimale pour obtenir un projet fonctionnel est la suivante
 
