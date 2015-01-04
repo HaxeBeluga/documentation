@@ -14,7 +14,7 @@ Aucune fonction de Beluga n'est appelée lors de cette phase.
 Cette phase sert a générer certains types
 
 | Fonctions | Description |
-|-----------------------------------------------------------------------------------------------|
+| --------- | ---------------------------------------------------------------------------------- |
 |ModuleBulder.registerModule()	    | Déclaration de tous les modules auprés de Beluga         |
 |SessionFlashData.build()		    | Génération des attributs de session et flashdata             |
 |Database.registerModel()		    | Déclaration  des modèles                                         |
@@ -27,13 +27,13 @@ Cette phase sert a générer certains types
 Les fonctions macro sont ensuite appelées
 
 | Fonctions | Description |
-|-----------------------------------------------------------------------------------------------|
+|----------- | ----------------------------------------------------------------------------------- |
 |ResourceManager.register()     | Copie des fichiers de ressources                              |
 |JavascriptBuilder.compile()    | Génération du fichier "beluga.js"                               |
 |CssBuilder.compile()           | Génération du fichier "beluga.css"                              |
 |Config.autoCreateFile()        | Génération fichiers de configuration pour chaque module       |
 |BelugaI18n.loadI18nFolder()    | Chargement des fichiers de traductions (i18n)                                |
 
-##OnAfterGenerate
+## OnAfterGenerate
 Ce sont des fonctions appelées aprés la phase de génération.
 Aucune fonction de Beluga n'est appelée lors de cette phase.
