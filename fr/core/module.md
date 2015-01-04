@@ -1,4 +1,5 @@
-# Module
+Module
+======
 
 Ici, nous allons voir en détails tout ce qui couvre les modules de Beluga de façon générale. En premier, nous verrons ce qu'ils _sont_ et _comment_ ils sont organisés. Ensuite, nous nous pencherons sur la façon dont ils s'intègrent à Beluga. Une fois ceci en main, nous apprendrons comment rajouter vos propres modules.
 
@@ -14,7 +15,7 @@ De plus, nous suivons une convention de nommage très stricte permettant de faci
 
 Le seul défaut de cette approche est qu'elle rend plus dure, au premier abord, de trouver pourquoi un module n'est pas entièrement reconnu par Beluga. Pour cette raison, nous avons créé un script d'auto-génération d'un module (cf: Ajouter votre propre module).
 
-### Filesystem
+### Architecture de fichier
 
 Les modules se trouvent sous le dossier `beluga/module`. Ils __doivent__ respecter l'architecture dossier minimale suivante afin d'être correctement reconnus et chargés par Beluga :
 
@@ -63,17 +64,17 @@ Ensuite, les évènements et widgets peuvent être facilement, et logiquement, a
 beluga.getModuleInstance(Account).widgets.loginForm
 ```
 
-#### interface de programmation
+#### Interface de programmation
 
 Dans le dossier `api`, il **doit** se trouver un fichier de classe contenant une interface de programmation pour le diffuseur d'évènement web de Beluga (nommé nom du module + "Api"). Puisque *c'est* un fichier d'interface de programmation web, les fonctions de routages __doivent__ commencer par "do" (voir la docummentation officielle [Haxe Web Disptacher](http://old.haxe.org/manual/dispatch#why-actions-are-prefixed-with-do)).
 
 #### JavaScript
 
-Voir section __JavaScript__.
+Le dossier `js` contient le code Javascript du module. Celui-ci peut concerné l'interaction utilsateur (animation, etc) aussi bien que les requêtes asynchrones du module.
 
 #### Locale
 
-Voir section __Localisation__.
+Dans le dossier `locale` sont stockés tous les fichiers contenant la traduction disponible pour le module.
 
 #### View
 
@@ -84,18 +85,13 @@ Dans le dossier `view` sont contenues toutes les ressources relatives aux diffé
 
 #### Widget
 
-Voir section __Widget__.
-
-## Mécanismes
-
-### Évènements
-
-Voir section __Évènements__.
+Le dossier `widget` contient les fichiers de code source en charge du remplissage de la variable de context utilisée au sein des vues. Chaque fichier correspond à une vue. 
 
 ## Ajouter votre propre module
 
 Beluga contient un binaire (nommé run.n) permettant son intégration dans l'outil `Haxelib`. Celui-ci propose, entre autres, de générer un module contenant l'architecture minimale et fonctionnelle.
 Cet outil peut-être utilisé depuis la commande suivante:
-> haxelib run beluga create_module "nom_du_module"
+
+`haxelib run beluga create_module "nom_du_module"`
 
 Ceci génère alors un module suivant les conventions expliquées précédemment et directement dans le dossier `beluga/module` de votre installation de la bibliothèque Beluga.

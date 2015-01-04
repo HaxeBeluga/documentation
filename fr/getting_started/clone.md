@@ -1,5 +1,5 @@
 Comment récupérer le projet
-========================
+===========================
 
 Voici les étapes pour récupérer notre projet depuis le site où il est hébergé (github.com) afin de le mettre sur votre ordinateur, en **local**.
 
@@ -37,8 +37,7 @@ Allez ensuite sur le fork (via https://github.com/votre_nom_de_compte/Beluga) et
 Et voilà, vous avez récupéré le projet sur votre machine et pouvez dès-à-présent voir le code en **local** !
 
 Comment contribuer
-=================
-
+==================
 
 Pour contribuer au projet, c'est-à-dire ajouter un petit quelque chose ou faire des modifications, il faut intégrer vos modifications (ajout/modification de fichier/code) sur le dépôt principal de Beluga et donc utiliser les **pull requests**.
 Bien sûr, inutile de proposer des fichiers de code non testés.

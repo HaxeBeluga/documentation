@@ -1,4 +1,5 @@
-# Comment débuter
+Comment débuter
+===============
 
 ## Première utilisation
 
@@ -9,8 +10,6 @@ L'installation de __beluga__ nécessite les programmes suivants sur votre ordina
 * php
 * apache
 * git
-
---> *Voir le fichier "clone.md" situé dans le même répertoire que ce fichier pour savoir comment installer ces programmes, si besoin*
 
 Actuellement, __Beluga__ supporte les bases de données MySQL, cependant il peut compiler aussi bien sur _neko_ que _PHP_. Ce document utilisera _PHP_ afin d'en simplifier les instructions.
 
