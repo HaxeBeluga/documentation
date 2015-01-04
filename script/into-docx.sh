@@ -19,6 +19,7 @@ userFiles=(
 	'user/core/javascript.md'
 	'user/core/local.md'
 	'user/core/error.md'
+	'user/core/repository.md'
 	'user/core/log.md'
 	'user/core/form.md'
 	'user/module/account.md'
