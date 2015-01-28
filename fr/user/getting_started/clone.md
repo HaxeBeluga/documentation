@@ -42,9 +42,21 @@ Comment contribuer
 Pour contribuer au projet, c'est-à-dire ajouter un petit quelque chose ou faire des modifications, il faut intégrer vos modifications (ajout/modification de fichier/code) sur le dépôt principal de Beluga et donc utiliser les **pull requests**.
 Bien sûr, inutile de proposer des fichiers de code non testés.
 
+Tout d'abord, créez une branche qui sera votre branche de travail et qui évitera de travailler directement sur la branche principale :
+
+* Tapez dans la ligne de commande (la petite fenêtre noire) la commande suivante afin de créer votre branche :
+
+> git branch nom_de_votre_branche_de_travail
+
+* Tapez ensuite ceci pour pointer vers cette branche et non sur la branche principale appelée master :
+
+> git checkout nom_de_votre_branche_de_travail
+
+Et voilà la branche de créée et vous êtes prêt pour une contribution.
+
 Par exemple pour ajouter un fichier en utilisant un **pull request**, voici la marche à suivre :
 * Copiez votre fichier dans votre dépôt **local**
-* Ouvrez une ligne de commande (la petite fenêtre noire) et tapez
+* Ouvrez une ligne de commande et tapez
 
 > git add votre_fichier
 
@@ -56,7 +68,6 @@ Par exemple pour ajouter un fichier en utilisant un **pull request**, voici la m
 
 > git push origin nom_de_votre_branche_locale_de_travail
 
-(que vous aurez préalablement créé afin de ne pas travailler sur la branche principale et qui portera le nom que vous voulez)
 * Allez sur votre fork sur github (https://github.com/votre_nom_de_compte/Beluga) et choississez votre branche de travail
 * Cliquez sur le bouton à droite nommé "Compare, review, create a pull request" pour créer votre pull request qui sera ensuite examiné et validé/refusé par notre équipe !
 

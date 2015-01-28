@@ -3,9 +3,9 @@ Module - FAQ
 
 Le module de __foire aux questions__ (FAQ) vous permet de créer et de gérer des FAQs facilement. Si vous souhaitez faire de l'administration ou de l'édition sur des catégories et / ou des FAQs, vous aurez besoin du module de __compte__ fourni par Beluga.
 
-Ce module vous donne accès à un certain nombre de méthodes pour facilement l'intégrer dans votre projet.
+Ce module vous donne accès à un certain nombre de fonctions pour facilement l'intégrer dans votre projet.
 
-Voici les méthodes fournies par ce module :
+### Fonctions
 
 ```Haxe
 public function redirectEditFAQ() : Bool
@@ -23,33 +23,49 @@ public function editFAQ(args : {faq_id: Int, question : String, answer : String}
 public function getAllCategories() : Array<CategoryModel>
 ```
 
-##Signaux
+*public function redirectEditFAQ() : Bool*
 
-Ce module peut renvoyer les signaux suivants :
+Cette fonction est utilisée pour vérifier si la FAQ existe déjà. Elle va changer dans une prochaine version.
 
- * defaultPage
- * deleteFail
- * deleteSuccess
- * createFail
- * createSuccess
- * editFail
- * editSuccess
- * createCategoryFail
- * createCategorySuccess
- * deleteCategoryFail
- * deleteCategorySuccess
- * editCategoryFail
- * editCategorySuccess
- * redirectCreateFAQ
- * redirectCreateCategory
- * print
- * redirectEditCategory
- * redirectEditFAQ
- * edit
- * create
- * delete
+*public function getCurrentCategory() : CategoryModel*
 
-##Erreurs
+Cette fonction retourne la catégorie courante ou *null* s'il n'y en a pas.
+
+```Haxe
+public function createFAQ(args : {
+    question : String,
+    answer : String,
+    category_id : Int
+}) : Void
+```
+
+La fonction *createFAQ* prend la question, la réponse et la catégorie dans laquelle elle sera créée en paramètre. Si cette méthode échoue, veuillez vérifier le code d'erreur retourné.
+
+*public function createCategory(args : {name : String, parent: Int}) : Void*
+
+La fonction *createCategory* prend un nom et l'identifiant du parent (ou -1 si le parent est la catégorie root) comme paramètres. Si elle échoue, veuillez vérifier le code d'erreur retourné.
+
+*public function deleteFAQ(args : {question_id : Int, category_id : Int}) : Void*
+
+La fonction *deleteFAQ* prend l'identifiant de la FAQ à supprimer et la catégorie dans laquelle elle se trouve. Elle renvoie le signal `deleteFail` ou le signal `deleteSuccess`. Si elle échoue, veuillez vérifier le code d'erreur retourné.
+
+*public function deleteCategory(args : {category_id : Int, parent_id: Int}) : Void*
+
+La fonction *deleteCategory* prend l'identifiant de la catégorie à supprimer ainsi que l'identifiant de son parent. Si elle échoue, veuillez vérifier le code d'erreur retourné.
+
+*public function editCategory(args : {category_id: Int, name : String}) : Void*
+
+La fonction *editCategory* prend en paramètre l'identifiant de la catégorie que l'on veut éditer ainsi que le nouveau nom que l'on souhaite lui attribuer. Si elle échoue, veuillez vérifier le code d'erreur retourné.
+
+*public function editFAQ(args : {faq_id: Int, question : String, answer : String}) : Void*
+
+La méthode *editFAQ* prend en paramètre l'identifiant de la FAQ à éditer, la nouvelle question et la nouvelle réponse. Elle renvoie le signal `editFail` ou le signal `editSuccess`. Si elle échoue, veuillez vérifier le code d'erreur retourné.
+
+*public function getAllCategories() : Array<CategoryModel>*
+
+La fonction *getAllCategories* renvoie la liste des catégories existantes. Elle peut bien évidemment renvoyer un tableau vide.
+
+### Erreurs
 
 En cas d'échec dans l'exécution d'une méthode, vous n'avez qu'à vérifier le code d'erreur retourné pour savoir ce qui n'a pas fonctionné. Voici la liste des erreurs du module de __foire aux questions__ :
 
@@ -63,64 +79,6 @@ En cas d'échec dans l'exécution d'une méthode, vous n'avez qu'à vérifier le
  * __IdNotFound__ : La FAQ demandée n'existe pas.
  * __None__ : Aucune erreur détectée.
 
-##Description des méthodes
+### A propos des évènements
 
-Par exemple, la méthode *createFaq* renvoie le signal `createSuccess` ou le signal `createFail`. Ensuite, vous n'avez qu'à effectuer l'action souhaitée en fonction du résultat obtenu.
-
-```Haxe
-public function redirectEditFAQ() : Bool
-```
-
-Cette méthode est utilisée pour vérifier si la FAQ existe déjà. Cette méthode va changer dans une prochaine version.
-
-```Haxe
-public function getCurrentCategory() : CategoryModel
-```
-
-Cette méthode retourne la catégorie courante ou *null* s'il n'y en a pas.
-
-```Haxe
-public function createFAQ(args : {
-    question : String,
-    answer : String,
-    category_id : Int
-}) : Void
-```
-
-La méthode *createFAQ* prend la question, la réponse et la catégorie dans laquelle elle sera créée en paramètre. Elle renvoie le signal `createSucess` ou le signal `createFail`. Si cette méthode échoue, veuillez vérifier le code d'erreur retourné.
-
-```Haxe
-public function createCategory(args : {name : String, parent: Int}) : Void
-```
-
-La méthode *createCategory* prend un nom et l'identifiant du parent (ou -1 si le parent est la catégorie root) comme paramètres. Elle renvoie le signal `createCategoryFail` ou le signal `createCategorySuccess`. Si elle échoue, veuillez vérifier le code d'erreur retourné.
-
-```Haxe
-public function deleteFAQ(args : {question_id : Int, category_id : Int}) : Void
-```
-
-La méthode *deleteFAQ* prend l'identifiant de la FAQ à supprimer et la catégorie dans laquelle elle se trouve. Elle renvoie le signal `deleteFail` ou le signal `deleteSuccess`. Si elle échoue, veuillez vérifier le code d'erreur retourné.
-
-```Haxe
-public function deleteCategory(args : {category_id : Int, parent_id: Int}) : Void
-```
-
-La méthode *deleteCategory* prend l'identifiant de la catégorie à supprimer ainsi que l'identifiant de son parent. Elle renvoie le signal `deleteCategoryFail` ou le signal `deleteCategorySuccess`. Si elle échoue, veuillez vérifier le code d'erreur retourné.
-
-```Haxe
-public function editCategory(args : {category_id: Int, name : String}) : Void
-```
-
-La méthode *editCategory* prend en paramètre l'identifiant de la catégorie que l'on veut éditer ainsi que le nouveau nom que l'on souhaite lui attribuer. Elle renvoie le signal `editCategoryFail` ou le signal `editCategorySuccess`. Si elle échoue, veuillez vérifier le code d'erreur retourné.
-
-```Haxe
-public function editFAQ(args : {faq_id: Int, question : String, answer : String}) : Void
-```
-
-La méthode *editFAQ* prend en paramètre l'identifiant de la FAQ à éditer, la nouvelle question et la nouvelle réponse. Elle renvoie le signal `editFail` ou le signal `editSuccess`. Si elle échoue, veuillez vérifier le code d'erreur retourné.
-
-```Haxe
-public function getAllCategories() : Array<CategoryModel>
-```
-
-La méthode *getAllCategories* renvoie la liste des catégories existantes. Elle peut bien évidemment renvoyer un tableau vide.
+Ces fonctions lancent toutes des évènements en cas de succès ou d'échec. Ces évènements sont facilement reconnaissables et suivent un même patron : le nom de l'action + un suffixe. Par exemple, les évènements dans le cas de la fonction `deleteCategory` seront *deleteCategory__Fail__* et *deleteCategory__Success__*.
