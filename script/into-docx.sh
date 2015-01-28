@@ -46,7 +46,7 @@ techFiles=(
 	'technical/pattern-register.md'
 )
 
-if [ ${languageDir: -1} != '/' ]; then
+if [ "${languageDir: -1}" != '/' ]; then
 	languageDir=$languageDir'/'
 fi
 
